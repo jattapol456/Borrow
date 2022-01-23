@@ -1,8 +1,11 @@
 <template lang="pug">
 #app
   Navbar
-  Sidebar
-  Nuxt
+  .flex
+    Sidebar
+    .pl-20
+      Nuxt
+  
 </template>
 
 <script lang="js">

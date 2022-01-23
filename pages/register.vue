@@ -42,6 +42,13 @@ body
                                 button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200  w-80 h-10 text-white rounded") Register
                     
 </template>
+
+<script lang="js">
+export default {
+	layout: "layoutadmin"
+}
+</script>
+
 <style lang="scss" scoped>
 body {
     background: #EFEFEF;

@@ -27,7 +27,7 @@
 ]
 <script lang="js">
 export default {
-
+	layout: "layoutadmin"
 }
 </script>
 

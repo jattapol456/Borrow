@@ -1,9 +1,9 @@
 <template lang="pug">
 header
-  .container
-    .w-full.h-16.shadow-md.flex.justify-between.items-center.px-3
+  .container.bg-white
+    .w-full.h-16.flex.justify-between.items-center.px-3
       .flex.space-x-20
-        .flex.items-center
+        .flex.items-center.pl-2
           a.text-4xl.font-black.text-red-main IT
           a.text-2xl.font-black.text-red-main.pt-2 SERVICE
         input.search(src="~static/icons/search.svg" placeholder="ค้นหา" type="text")
