@@ -1,41 +1,55 @@
 <template lang="pug">
-.section.w-full.h-screen.flex.flex-col-reveresed
-	img(src="/unnamed.jpg" alt="background" class="object-cover object-center h-screen w-7/12")
-	.main.flex.items-center.justify-center.bg-white.w-full.p-2
-		.bg-white.items-center
-			.flex.justify-center
-				h1.text-6xl.font-black.text-red-main.pt-16 IT
-				h1.text-4xl.font-black.text-red-main.pt-20 SERVICE
-				
-			.w-full.max-w-xs
-				.form.bg-white.rounded.px-8.pt-16.pb-8
-					.pb-4.space-y-2
-						p Email
-						input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
-					.pb-4.space-y-2
-						p Password
-						input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
-					.pb-4
-						nuxt-link(to="/")
-							button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-full h-9 text-white rounded") Log in
-					.flex
-						p.text-sm.mr-2 Don’t have an account	
-						nuxt-link.text-sm.text-red-main(:to="{ path: '/register'}") Register	
-					.flex 
-						p.text-sm.mr-2 Login to	
-						nuxt-link.text-sm.text-red-main(:to="{ path: '/loginadmin'}") Admin
+body.bg-gray-a
+    .pt-14
+        h1 Borrow
+        .wrapper.pl-6
+            form
+                .table-container
+                    table.table-auto.w-full.border
+                        thead.h-12
+                            tr.border
+                                th.pl-4.text-left NAME
+                                th.text-left DATE
+                                th.text-left EQUIPMENT
+                                th.text-left BORROW
+                                th.text-left RETURN
+                                th.text-left ACTION
+                        tbody.h-10
+                            tr.border
+                                td.pl-4(data-th="NAME") Jattapol
+                                td(data-th="DATE") 21/11/2021
+                                td(data-th="YeEQUIPMENTar") Keyboard
+                                td(data-th="BORROW") 23/11/2021
+                                td(data-th="RETURN") 25/11/2021
+                                td
+                                    .flex.space-x-2
+                                        .bg-gray-a.rounded-full.p-1
+                                            img(src="~static/icons/eye.svg").object-cover.h-5.w-5
+                                        .bg-red-main.rounded-full.p-1
+                                            img(src="~static/icons/bin.svg").object-cover.h-5.w-5
+
+
+
 
 </template>
-]
+
 <script lang="js">
 export default {
 
 }
 </script>
 
-<style lang="postcss" scoped>
-
-.login-with {
-	@apply hover:bg-red-400 hover:text-white;
+<style lang="scss" scoped>
+.wrapper {	
+	margin-top: 20px;
+    margin-bottom: 80px;
 }
+form {
+    background: #FFFFFF;
+    padding-bottom: 45px;
+    width: 1100px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
 </style>

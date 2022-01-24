@@ -1,6 +1,6 @@
 <template lang="pug">
 body
-    section.bg-gray
+    section.bg-gray-a
         .wrapper
             .form
                 .main.w-full
