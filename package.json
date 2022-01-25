@@ -24,6 +24,7 @@
     "pug-plain-loader": "^1.1.0",
     "sass": "^1.47.0",
     "sass-loader": "^10.1.1",
+    "v-calendar": "^3.0.0-alpha.6",
     "vue": "^2.6.14",
     "vue-indent-pug-loader": "^0.1.1",
     "vue-server-renderer": "^2.6.14",
