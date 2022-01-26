@@ -16,7 +16,7 @@
 						p Password
 						input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
 					.pb-4
-						nuxt-link(to="/")
+						nuxt-link(to="/request")
 							button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-full h-9 text-white rounded") Log in
 					.flex
 						p.text-sm.mr-2 Don’t have an account	

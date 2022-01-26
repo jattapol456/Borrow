@@ -27,6 +27,19 @@ body.bg-gray-a
                                             img(src="~static/icons/eye.svg").object-cover.h-5.w-5
                                         .bg-red-main.rounded-full.p-1
                                             img(src="~static/icons/bin.svg").object-cover.h-5.w-5
+                        tbody.h-10
+                            tr.border
+                                td.pl-4(data-th="NAME") Asda
+                                td(data-th="DATE") 2/12/2021
+                                td(data-th="YeEQUIPMENTar") Keyboard
+                                td(data-th="BORROW") 3/12/2021
+                                td(data-th="RETURN") 7/12/2021
+                                td
+                                    .flex.space-x-2
+                                        .bg-gray-a.rounded-full.p-1
+                                            img(src="~static/icons/eye.svg").object-cover.h-5.w-5
+                                        .bg-red-main.rounded-full.p-1
+                                            img(src="~static/icons/bin.svg").object-cover.h-5.w-5
 
 
 
