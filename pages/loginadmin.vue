@@ -7,7 +7,7 @@
 				h1.text-6xl.font-black.text-red-main.pt-16 IT
 				h1.text-4xl.font-black.text-red-main.pt-20 SERVICE
 			.w-full.max-w-xs
-				.pl-52.mb-2
+				.pl-48.mb-2
 					p ADMIN
 				.form.bg-white.rounded.px-8.pt-6.pb-8
 					.pb-4.space-y-2
@@ -21,20 +21,17 @@
 							button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-full h-9 text-white rounded") Log in
 					.flex
 						p.text-sm.mr-2 Login to	
-						nuxt-link.text-sm.text-red-main(:to="{ path: '/'}") User
+						nuxt-link.text-sm.text-red-main(:to="{ path: '/login'}") User
 
 </template>
 ]
 <script lang="js">
 export default {
-	layout: "layoutadmin"
+	layout: "layoutlogin"
 }
 </script>
 
 <style lang="postcss" scoped>
-/* .texthead {
-	width: 5/12;
-} */
 .login-with {
 	@apply hover:bg-red-400 hover:text-white;
 }

@@ -1,6 +1,6 @@
 <template lang="pug">
-body
-    section.bg-gray-a
+body.bg-gray-a
+    section
         .wrapper
             .form
                 .main.w-full
@@ -38,14 +38,14 @@ body
                             p Department
                             input(class="shadow appearance-none border rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
                         .pb-4.pt-2
-                            nuxt-link(to="/")
+                            nuxt-link(to="/login")
                                 button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200  w-80 h-10 text-white rounded") Register
                     
 </template>
 
 <script lang="js">
 export default {
-	layout: "layoutadmin"
+	layout: "layoutlogin"
 }
 </script>
 

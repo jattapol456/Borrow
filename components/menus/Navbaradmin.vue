@@ -11,19 +11,20 @@ header
         div
           img(src="~static/icons/bell.svg")
         div
+          p ADMIN
           p Jattapol
-        div.pr-6
-          img(src="~static/imgs/Prof.png" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
+        div
+          img(src="~static/imgs/Prof.png").object-cover.h-10.w-10.rounded-full
   div(v-if="show").absolute.right-4.bg-white.p-4.space-y-2
     nuxt-link(to="/profile")
       p Profile
-    nuxt-link(to="/login")
+    nuxt-link(to="/loginadmin")
       p Logout
-      
+
 </template>
 
 <script lang="js">
-export default{
+export default {
   data() {
     return {
       show: false,

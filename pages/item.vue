@@ -1,6 +1,6 @@
 <template lang="pug">
 body.bg-gray-a
-    .pt-14
+    .pt-14.pl-20
         .wrapper.pl-6
             form.p-6
                 .pl-20.pt-6

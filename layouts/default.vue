@@ -1,9 +1,9 @@
 <template lang="pug">
 #app
-  Navbar
-  .flex
-    Sidebar
-    .pl-20
+  body.bg-gray-a
+    Navbar
+    .flex
+      Sidebar
       Nuxt
   
 </template>

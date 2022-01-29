@@ -1,6 +1,6 @@
 <template lang="pug">
 body.bg-gray-a
-    .pt-14
+    .pt-14.pl-20
         .wrapper.pl-6
             form.p-6
                 .pl-20.pt-6
@@ -15,7 +15,7 @@ body.bg-gray-a
                                 
                     .pt-6.space-y-4
                         .flex.space-x-4
-                            p Equipment : : 
+                            p Equipment :
                             p Keyboard
                         .flex.space-x-4
                             p Brand : 

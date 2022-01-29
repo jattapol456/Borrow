@@ -1,49 +1,44 @@
 <template lang="pug">
 body.bg-gray-a
-    .pt-14
-        h1 Borrow
+    .pt-14.pl-20
         .wrapper.pl-6
-            form
-                .table-container
-                    table.table-auto.w-full.border
-                        thead.h-12
-                            tr.border
-                                th.pl-4.text-left NAME
-                                th.text-left DATE
-                                th.text-left EQUIPMENT
-                                th.text-left BORROW
-                                th.text-left RETURN
-                                th.text-left ACTION
-                        tbody.h-10
-                            tr.border
-                                td.pl-4(data-th="NAME") Jattapol
-                                td(data-th="DATE") 21/11/2021
-                                td(data-th="YeEQUIPMENTar") Keyboard
-                                td(data-th="BORROW") 23/11/2021
-                                td(data-th="RETURN") 25/11/2021
-                                td
-                                    .flex.space-x-2
-                                        .bg-gray-a.rounded-full.p-1
-                                            img(src="~static/icons/eye.svg").object-cover.h-5.w-5
-                                        .bg-red-main.rounded-full.p-1
-                                            img(src="~static/icons/bin.svg").object-cover.h-5.w-5
-                        tbody.h-10
-                            tr.border
-                                td.pl-4(data-th="NAME") Asda
-                                td(data-th="DATE") 2/12/2021
-                                td(data-th="YeEQUIPMENTar") Keyboard
-                                td(data-th="BORROW") 3/12/2021
-                                td(data-th="RETURN") 7/12/2021
-                                td
-                                    .flex.space-x-2
-                                        .bg-gray-a.rounded-full.p-1
-                                            img(src="~static/icons/eye.svg").object-cover.h-5.w-5
-                                        .bg-red-main.rounded-full.p-1
-                                            img(src="~static/icons/bin.svg").object-cover.h-5.w-5
+            form.p-6
+                .pl-4.pt-6
+                    p.text-xl.font-bold REQUEST
+                .pl-2.pt-10
+                    .pr-96.space-y-6
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 Item :
+                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 Brand :
+                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 Model :
+                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 Code IP :
+                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 PERIOD :
+                    .flex.justify-center.pt-4
+                        .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
+                            .space-y-4
+                                p BORROW :
+                                .pl-6
+                                    input.border(type="date" id="" name="")
+                                .pl-6
+                                    input.border(type="time" id="" name="")
+                            .space-y-4
+                                p RETURN :
+                                .pl-6
+                                    input.border(type="date" id="" name="")
+                                .pl-6
+                                    input.border(type="time" id="" name="") 
 
-
-
-
+                    .flex.justify-center.pt-10
+                        button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-60 h-10 text-white rounded") SEND REQUEST 
+                                    
 </template>
 
 <script lang="js">
@@ -63,6 +58,8 @@ form {
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
-
+.borrow {
+    width: 700px;
+    height: 250px;
+}
 </style>

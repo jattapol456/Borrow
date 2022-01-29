@@ -1,11 +1,11 @@
 <template lang="pug">
 body.bg-gray-a
-    .pt-14
+    .pt-14.pl-20
         .wrapper.pl-6
             form
                 .pl-16.pt-10.space-y-10
                     div
-                        div(v-if="!image")
+                        div(v-if="!image").space-y-4
                             h2 Select an image
                             input(type="file" @change="onFileChange")
                         div(v-else).flex.items-end.space-x-4
@@ -31,6 +31,7 @@ body.bg-gray-a
 
 <script lang="js">
 export default {
+    layout: "layoutadmin",
     data: () => {
         return {
             image: ""

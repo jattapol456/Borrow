@@ -1,6 +1,6 @@
 <template lang="pug">
 body.bg-gray-a
-    .pt-14
+    .pt-14.pl-20
         .wrapper.pl-6
             form.p-4
                 .grid.grid-cols-2(class="lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-5")
