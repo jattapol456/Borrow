@@ -1,17 +1,17 @@
 <template lang="pug">
-body.bg-gray-a
+body
     .pt-14.pl-20
         .wrapper.pl-6
             form.p-4
                 .grid.grid-cols-2(class="lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-5")
-                    .border.bg-white.border-gray-a
-                        nuxt-link(to="")
+                    .border.bg-white.border-gray-500
+                        nuxt-link(to="/item")
                             .flex.justify-between.pl-2.pr-2
                                 .flex.space-x-1
                                     p ID:
                                     p 001
                                 p AVAILABLE
-                            img.max-h-50.w-50.bg-white.object-contain.rounded-t-xl(src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png" alt="")
+                            img.max-h-36.w-36.bg-white.object-contain.rounded-t-xl(src="~static/imgs/keyboard.png" alt="")
                             .p-5.space-y-2
                                 .flex.space-x-2
                                     p Item
@@ -22,14 +22,14 @@ body.bg-gray-a
                                     p.pl-8 *
                                     p Keyboard
                                     
-                    .border.bg-white.border-gray-a
-                        nuxt-link(to="")
+                    .border-2.bg-white.border-gray-500
+                        nuxt-link(to="/item")
                             .flex.justify-between.pl-2.pr-2
                                 .flex.space-x-1
                                     p ID:
                                     p 001
                                 p AVAILABLE
-                            img.max-h-50.w-50.bg-white.object-contain.rounded-t-xl(src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png" alt="")
+                            img.max-h-36.w-36.bg-white.object-contain.rounded-t-xl(src="~static/imgs/keyboard.png" alt="")
                             .p-5.space-y-2
                                 .flex.space-x-2
                                     p Item

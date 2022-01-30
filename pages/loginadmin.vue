@@ -12,10 +12,10 @@
 				.form.bg-white.rounded.px-8.pt-6.pb-8
 					.pb-4.space-y-2
 						p Email
-						input(class="shadow appearance-none border rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
+						input(class="shadow appearance-none border bg-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
 					.pb-4.space-y-2
 						p Password
-						input(class="shadow appearance-none border rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
+						input(class="shadow appearance-none border bg-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
 					.pb-4
 						nuxt-link(to="/request")
 							button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-full h-9 text-white rounded") Log in

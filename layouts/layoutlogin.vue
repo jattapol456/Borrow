@@ -1,6 +1,7 @@
 <template lang="pug">
 #app
-    Nuxt
+    body.bg-grayBG
+        Nuxt
 </template>
 
 <script lang="js">

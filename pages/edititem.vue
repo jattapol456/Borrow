@@ -1,5 +1,5 @@
 <template lang="pug">
-body.bg-gray-a
+body
     .pt-14.pl-20
         .wrapper.pl-6
             form.p-6
@@ -11,7 +11,7 @@ body.bg-gray-a
                         button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-28 h-8 text-white rounded") Edit
                     
                     .flex.justify-center.pr-20
-                        img(src="~static/imgs/Prof.png").h-44
+                        img(src="~static/imgs/keyboard.png").h-44
                                 
                     .pt-6.space-y-4
                         .flex.space-x-4

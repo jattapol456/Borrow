@@ -1,6 +1,6 @@
 <template lang="pug">
 #app
-  body.bg-gray-a
+  body.bg-grayBG
     Navbaradmin
     .flex
       Sidebaradmin

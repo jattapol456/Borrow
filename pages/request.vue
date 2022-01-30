@@ -1,5 +1,5 @@
 <template lang="pug">
-body.bg-gray-a
+body
     .pt-14.pl-20
         h1 Borrow
         .wrapper.pl-6

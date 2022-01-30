@@ -1,5 +1,5 @@
 <template lang="pug">
-body.bg-gray-a
+body
     .pt-14.pl-20
         .wrapper.pl-6
             form.p-6
@@ -7,19 +7,19 @@ body.bg-gray-a
                     p.text-xl.font-bold REQUEST
                 .pl-2.pt-10
                     .pr-96.space-y-6
-                        .flex.justify-between.items-center.pr-64
+                        .flex.justify-between.items-center.pr-72
                             p.pl-20 Item :
-                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-64
+                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-72
                             p.pl-20 Brand :
-                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-64
+                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-72
                             p.pl-20 Model :
-                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-64
+                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-72
                             p.pl-20 Code IP :
-                            input(class="shadow appearance-none border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-64
+                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-72
                             p.pl-20 PERIOD :
                     .flex.justify-center.pt-4
                         .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
@@ -53,7 +53,7 @@ export default {
     margin-bottom: 80px;
 }
 form {
-    background: #FFFFFF;
+    background: #f5f5f5;
     padding-bottom: 45px;
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -62,4 +62,5 @@ form {
     width: 700px;
     height: 250px;
 }
+
 </style>
