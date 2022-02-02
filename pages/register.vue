@@ -31,7 +31,7 @@ body
                         p Employee ID
                         input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
                     .pb-4.space-y-2
-                        p Phone Division
+                        p Division
                         input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
                     .pb-4.space-y-2
                         p Department

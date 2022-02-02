@@ -6,15 +6,15 @@ header
         .flex.items-center.pl-2
           a.text-4xl.font-black.text-red-main IT
           a.text-2xl.font-black.text-red-main.pt-2 SERVICE
-        input.search(src="~static/icons/search.svg" placeholder="ค้นหา" type="text" class="focus:outline-none focus:shadow-outline")
+        input.search(src="~static/icons/search.svg" placeholder="Search" type="text" class="focus:outline-none focus:shadow-outline")
       .flex.items-center.space-x-8
         div
           img(src="~static/icons/bell.svg")
         div
           p ADMIN
           p Jattapol
-        div
-          img(src="~static/imgs/Prof.png").object-cover.h-10.w-10.rounded-full
+        div.pr-6
+          img(src="~static/imgs/Prof.png" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
   div(v-if="show").absolute.right-4.bg-white.space-y-2.border-4
     nuxt-link(to="/profile")
       p.pl-2.pr-2.border.border-black Profile

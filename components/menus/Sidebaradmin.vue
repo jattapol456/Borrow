@@ -2,13 +2,13 @@
 .flex.flex-col
     aside.bg-red-main.relative.h-full.min-h-screen.w-52
         nav.text-white.text-base.space-y-1
-            nuxt-link(to="/")
+            nuxt-link(to="/request")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Request
-            nuxt-link(to="/treasury")
+            nuxt-link(to="/treasuryadmin")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Treasury
-            nuxt-link(to="/latest") 
+            nuxt-link(to="/latestadmin") 
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Latest
-            nuxt-link(to="/frequent")
+            nuxt-link(to="/frequentadmin")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Frequent
             nuxt-link(to="/adddevice")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Add device

@@ -53,7 +53,7 @@ export default {
     margin-bottom: 80px;
 }
 form {
-    background: #f5f5f5;
+    background: #ffffff;
     padding-bottom: 45px;
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);

@@ -39,12 +39,13 @@ body
                                 .flex.items-center.space-x-2
                                     p.pl-8 *
                                     p Keyboard
-                                                    
+                                
+                        
 </template>
 
 <script lang="js">
 export default {
-
+    layout: "layoutadmin",
 }
 </script>
 
@@ -59,4 +60,5 @@ form {
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
 </style>

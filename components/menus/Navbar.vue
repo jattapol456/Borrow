@@ -6,7 +6,7 @@ header
         .flex.items-center.pl-2
           a.text-4xl.font-black.text-red-main IT
           a.text-2xl.font-black.text-red-main.pt-2 SERVICE
-        input.search(src="~static/icons/search.svg" placeholder="ค้นหา" type="text" class="focus:outline-none focus:shadow-outline")
+        input.search(src="~static/icons/search.svg" placeholder="Search" type="text" class="focus:outline-none focus:shadow-outline")
       .flex.items-center.space-x-8
         div
           img(src="~static/icons/bell.svg" v-on:click="showwarn=!showwarn")
