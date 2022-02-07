@@ -24,8 +24,8 @@ body
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Code IP :
                             input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                    .flex.justify-center.pt-2
-                        button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-60 h-10 text-white rounded") SEND REQUEST 
+                .flex.justify-center.pt-10
+                    button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-60 h-10 text-white rounded") SEND REQUEST 
 
 </template>
 

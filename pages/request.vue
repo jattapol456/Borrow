@@ -24,7 +24,10 @@ body
                                 td
                                     .flex.space-x-2
                                         .bg-gray-a.rounded-full.p-1
-                                            img(src="~static/icons/eye.svg").object-cover.h-5.w-5
+                                            a(href="#popup")
+                                                img(src="~static/icons/eye.svg").object-cover.h-5.w-5
+                                        .bg-green-500.rounded-full.p-1
+                                            img(src="~static/icons/check.svg").object-cover.h-5.w-5
                                         .bg-red-main.rounded-full.p-1
                                             img(src="~static/icons/bin.svg").object-cover.h-5.w-5
                         tbody.h-10
@@ -38,10 +41,52 @@ body
                                     .flex.space-x-2
                                         .bg-gray-a.rounded-full.p-1
                                             img(src="~static/icons/eye.svg").object-cover.h-5.w-5
+                                        .bg-green-500.rounded-full.p-1
+                                            img(src="~static/icons/check.svg").object-cover.h-5.w-5
                                         .bg-red-main.rounded-full.p-1
                                             img(src="~static/icons/bin.svg").object-cover.h-5.w-5
 
+            .popup(id="popup")
+                .popup-inner
+                    .pl-28.pt-10
+                        .flex.justify-center
+                            .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
+                                .flex.justify-center
+                                    img(src="~static/imgs/keyboard.png").h-44
+                                            
+                                .pt-6.space-y-4
+                                    .flex.space-x-4
+                                        p Borrower : 
+                                        p เจตพล
+                                    .flex.space-x-4
+                                        p Employee ID : 
+                                        p 62021348
+                                    .flex.space-x-4
+                                        p Equipment : 
+                                        p Keyboard
+                                    .flex.space-x-4 
+                                        p Brand : 
+                                        p Dell
+                                    .flex.space-x-4
+                                        p Model : 
+                                        p X3
+                                    .flex.space-x-4
+                                        p Quantity  : 
+                                        p 1
+                                    .flex.space-x-4
+                                        p Reason  : 
+                                        p ใช้ภายในบริษัท
+                                    .flex.space-x-4
+                                        p BORROW : 
+                                        p 23/11/2021
+                                    .flex.space-x-4
+                                        p RETURN : 
+                                        p 25/11/2021
 
+                        .flex.justify-center.pt-10
+                            button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-60 h-10 text-white rounded" href="") APPROVE
+                        
+                    a.popup__close(href="#") X
 
 
 </template>
@@ -63,6 +108,69 @@ form {
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+html, body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
 
+@media screen and (max-width: 768px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .80);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: .64s ease-in-out;
+  &-inner {
+    position: relative;
+    bottom: -100vw;
+    right: -100vh;
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    max-height: 1500px;
+    width: 60%;
+    height: 85%;
+    background-color: #fff;
+    transform: rotate(32deg);
+    transition: .64s ease-in-out;
+  }
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    .popup-inner {
+      bottom: 0;
+      right: 0;
+      transform: rotate(0);
+    }
+  }
+  &__close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: .875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: #0A0A0A;
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+  }
+}
 
 </style>

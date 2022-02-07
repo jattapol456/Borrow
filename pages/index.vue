@@ -7,19 +7,25 @@ body
                     p.text-xl.font-bold REQUEST
                 .pl-2.pt-10
                     .pr-96.space-y-6
-                        .flex.justify-between.items-center.pr-72
+                        .flex.justify-between.items-center.pr-64
                             p.pl-20 Item :
                             input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-72
+                        .flex.justify-between.items-center.pr-64
                             p.pl-20 Brand :
                             input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-72
+                        .flex.justify-between.items-center.pr-64
                             p.pl-20 Model :
                             input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-72
+                        .flex.justify-between.items-center.pr-64
                             p.pl-20 Code IP :
                             input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
-                        .flex.justify-between.items-center.pr-72
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 Quantity :
+                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-64
+                            p.pl-20 Reason :
+                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                        .flex.justify-between.items-center.pr-64
                             p.pl-20 PERIOD :
                     .flex.justify-center.pt-4
                         .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28

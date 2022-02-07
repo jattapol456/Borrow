@@ -32,10 +32,27 @@ body
                         input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
                     .pb-4.space-y-2
                         p Division
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
+                        .dropdown.inline-block.relative
+                            button.bg-gray-200.text-gray-700.py-2.px-4.rounded.inline-flex.items-center
+                                span.mr-1 Division
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                            
+                            ul.dropdown-menu.absolute.hidden.text-gray-700.pt-1
+                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
+                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
+                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
+                                
                     .pb-4.space-y-2
                         p Department
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
+                        .dropdown.inline-block.relative
+                            button.bg-gray-200.text-gray-700.py-2.px-4.rounded.inline-flex.items-center
+                                span.mr-1 Department
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                            
+                            ul.dropdown-menu.absolute.hidden.text-gray-700.pt-1
+                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
+                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
+                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
                     .pb-4.pt-2
                         nuxt-link(to="/login")
                             button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200  w-80 h-10 text-white rounded") Register
@@ -61,5 +78,8 @@ export default {
   margin: 0 auto 100px;
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 </style>

@@ -20,7 +20,7 @@ body
                                 p Problem
                                 .flex.items-center.space-x-2
                                     p.pl-8 *
-                                    p Keyboard
+                                    p.text-sm ปุ่ม Enter กดไม่ได้
                                     
                     .border.bg-white.border-gray-500
                         nuxt-link(to="/item")
@@ -38,7 +38,7 @@ body
                                 p Problem
                                 .flex.items-center.space-x-2
                                     p.pl-8 *
-                                    p Keyboard
+                                    p.text-sm Keyboard
                                 
                         
 </template>

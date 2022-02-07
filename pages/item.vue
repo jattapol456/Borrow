@@ -15,7 +15,7 @@ body
                                 
                     .pt-6.space-y-4
                         .flex.space-x-4
-                            p Equipment : : 
+                            p Equipment : 
                             p Keyboard
                         .flex.space-x-4
                             p Brand : 
