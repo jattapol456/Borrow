@@ -23,7 +23,7 @@ body
                                 td(data-th="RETURN") 25/11/2021
                                 td
                                     .flex.space-x-2
-                                        .bg-gray-a.rounded-full.p-1
+                                        .bg-gray-300.rounded-full.p-1
                                             a(href="#popup")
                                                 img(src="~static/icons/eye.svg").object-cover.h-5.w-5
                                         .bg-green-500.rounded-full.p-1
@@ -39,8 +39,9 @@ body
                                 td(data-th="RETURN") 7/12/2021
                                 td
                                     .flex.space-x-2
-                                        .bg-gray-a.rounded-full.p-1
-                                            img(src="~static/icons/eye.svg").object-cover.h-5.w-5
+                                        .bg-gray-300.rounded-full.p-1
+                                            a(href="#popup")
+                                                img(src="~static/icons/eye.svg").object-cover.h-5.w-5
                                         .bg-green-500.rounded-full.p-1
                                             img(src="~static/icons/check.svg").object-cover.h-5.w-5
                                         .bg-red-main.rounded-full.p-1
