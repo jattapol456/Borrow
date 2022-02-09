@@ -84,15 +84,20 @@ body
                                         p 25/11/2021
 
                         .flex.justify-center.pt-10
-                            button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-60 h-10 text-white rounded" href="") APPROVE
-                        
+                            Buttonred.w-60.h-10 APPROVE
+                            
                     a.popup__close(href="#") X
 
 
 </template>
 
 <script lang="js">
+import Buttonred from '../components/Buttonred.vue'
+
 export default {
+	components: {
+        Buttonred,
+    },
     layout: "layoutadmin",
 }
 </script>

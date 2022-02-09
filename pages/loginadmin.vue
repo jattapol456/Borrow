@@ -18,7 +18,7 @@
 						input(class="shadow appearance-none border bg-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
 					.pb-4
 						nuxt-link(to="/request")
-							button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-full h-9 text-white rounded") Log in
+							Buttonred.w-full.h-9 Log in
 					.flex
 						p.text-sm.mr-2 Login to	
 						nuxt-link.text-sm.text-red-main(:to="{ path: '/login'}") User
@@ -26,7 +26,12 @@
 </template>
 ]
 <script lang="js">
+import Buttonred from '../components/Buttonred.vue'
+
 export default {
+	components: {
+        Buttonred,
+    },
 	layout: "layoutlogin"
 }
 </script>

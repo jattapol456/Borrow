@@ -43,13 +43,17 @@ body
                                     input.border(type="time" id="" name="") 
 
                     .flex.justify-center.pt-10
-                        button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-60 h-10 text-white rounded") SEND REQUEST 
-                                    
+                        Buttonred.w-60.h-10 SEND REQUEST 
+
 </template>
 
 <script lang="js">
-export default {
+import Buttonred from '../components/Buttonred.vue'
 
+export default {
+    components: {
+        Buttonred,
+    },
 }
 </script>
 

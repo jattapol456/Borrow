@@ -55,12 +55,16 @@ body
                                 li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
                     .pb-4.pt-2
                         nuxt-link(to="/login")
-                            button(class="focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200  w-80 h-10 text-white rounded") Register
-                
+                            Buttonred.w-80.h-10 Register
 </template>
 
 <script lang="js">
+import Buttonred from '../components/Buttonred.vue'
+
 export default {
+	components: {
+        Buttonred,
+    },
 	layout: "layoutlogin"
 }
 </script>
