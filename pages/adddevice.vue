@@ -14,16 +14,16 @@ body
                     .pr-96.space-y-10
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Item :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="item").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Brand :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="brand")
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Model :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="model").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Code IP :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="code_ip").py-2.px-4
                 .flex.justify-center.pt-10
                     Buttonred.w-60.h-10 SEND REQUEST 
 
@@ -31,10 +31,12 @@ body
 
 <script lang="js">
 import Buttonred from '../components/Buttonred.vue'
+import Input from '../components/Input.vue'
 
 export default {
 	components: {
         Buttonred,
+        Input,
     },
     layout: "layoutadmin",
     data: () => {

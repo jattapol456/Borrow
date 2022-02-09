@@ -9,22 +9,22 @@ body
                     .pr-96.space-y-6
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Item :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="item").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Brand :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="brand").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Model :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="model").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Code IP :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="code_ip").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Quantity :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="quantity").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Reason :
-                            input(class="shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="" type="text")
+                            Input(id="reason").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 PERIOD :
                     .flex.justify-center.pt-4

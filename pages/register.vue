@@ -14,22 +14,22 @@ body
                 .px-12.pt-5
                     .pb-4.space-y-2
                         p Firstname
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
+                        Input(id="firstname").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Lastname
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
+                        Input(id="lastname").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Email
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
+                        Input(id="email").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Password
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
+                        Input(id="password").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Phone Number
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text")
+                        Input(id="phone_number").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Employee ID
-                        input(class="shadow appearance-none border bg-gray-200 rounded py-2 px-4 w-80 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text")
+                        Input(id="employee_id").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Division
                         .dropdown.inline-block.relative
@@ -60,10 +60,12 @@ body
 
 <script lang="js">
 import Buttonred from '../components/Buttonred.vue'
+import Input from '../components/Input.vue'
 
 export default {
 	components: {
         Buttonred,
+        Input,
     },
 	layout: "layoutlogin"
 }
