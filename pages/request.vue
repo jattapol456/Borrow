@@ -49,39 +49,6 @@ body
                                         .bg-red-main.rounded-full.p-1
                                             img(src="~static/icons/bin.svg").object-cover.h-5.w-5
 
-        .wrapper.pl-6(v-else)
-            form
-                .table-container
-                    table.table-auto.w-full.border
-                        thead.h-12
-                            tr.border
-                                th.pl-4.text-left NAME
-                                th.text-left DATE
-                                th.text-left EQUIPMENT
-                                th.text-left RETURN
-                                th.text-left TIME
-                                th.text-left ACTION
-                        tbody.h-10
-                            tr.border
-                                td.pl-4(data-th="NAME") Jattapol
-                                td(data-th="DATE") 21/11/2021
-                                td(data-th="YeEQUIPMENTar") Keyboard
-                                td(data-th="RETURN") 25/11/2021
-                                td(data-th="TIME") 10:30 AM
-                                td
-                                    a(class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popup") EXAMINE
-
-                        tbody.h-10
-                            tr.border
-                                td.pl-4(data-th="NAME") Asda
-                                td(data-th="DATE") 2/12/2021
-                                td(data-th="YeEQUIPMENTar") Keyboard
-                                td(data-th="RETURN") 7/12/2021
-                                td(data-th="TIME") 11:00 AM
-                                td
-                                    a(class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popup") EXAMINE
-                        
-
             .popup(id="popup")
                 .popup-inner
                     .pl-28.pt-10
@@ -122,6 +89,61 @@ body
                         .flex.justify-center.pt-10
                             Buttonred.w-60.h-10 APPROVE
                             
+                    a.popup__close(href="#") X
+
+        .wrapper.pl-6(v-else)
+            form
+                .table-container
+                    table.table-auto.w-full.border
+                        thead.h-12
+                            tr.border
+                                th.pl-4.text-left NAME
+                                th.text-left DATE
+                                th.text-left EQUIPMENT
+                                th.text-left RETURN
+                                th.text-left TIME
+                                th.text-left ACTION
+                        tbody.h-10
+                            tr.border
+                                td.pl-4(data-th="NAME") Jattapol
+                                td(data-th="DATE") 21/11/2021
+                                td(data-th="YeEQUIPMENTar") Keyboard
+                                td(data-th="RETURN") 25/11/2021
+                                td(data-th="TIME") 10:30 AM
+                                td
+                                    a(class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popupretuen") EXAMINE
+
+                        tbody.h-10
+                            tr.border
+                                td.pl-4(data-th="NAME") Asda
+                                td(data-th="DATE") 2/12/2021
+                                td(data-th="YeEQUIPMENTar") Keyboard
+                                td(data-th="RETURN") 7/12/2021
+                                td(data-th="TIME") 11:00 AM
+                                td
+                                    a(class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popupretuen") EXAMINE
+
+            .popupreturn(id="popupretuen")
+                .popupreturn-inner
+                    .pl-28.pt-10
+                        .flex.justify-between.pr-20
+                            .flex.space-x-4
+                                p ID :
+                                p 001
+
+                            .flex.justify-center.pr-20
+                                img(src="~static/imgs/keyboard.png").h-44
+                                    
+                        .pt-6.space-y-4
+                            .flex.space-x-4
+                                p Equipment : 
+                                p Keyboard
+                            .flex.space-x-4
+                                textarea(class="shadow border-2 border-grayBG rounded p-2 w-96 h-28 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Problem") 
+                                
+                        .flex.justify-center.pt-10
+                            Buttonred.w-60.h-10 APPROVE
+                                
                     a.popup__close(href="#") X
 
 
@@ -197,6 +219,59 @@ html, body {
     visibility: visible;
     opacity: 1;
     .popup-inner {
+      bottom: 0;
+      right: 0;
+      transform: rotate(0);
+    }
+  }
+  &__close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: .875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: #0A0A0A;
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+  }
+}
+.popupreturn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .80);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: .64s ease-in-out;
+  &-inner {
+    position: relative;
+    bottom: -100vw;
+    right: -100vh;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    max-height: 1000px;
+    width: 65%;
+    height: 75%;
+    background-color: #fff;
+    transform: rotate(32deg);
+    transition: .64s ease-in-out;
+  }
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    .popupreturn-inner {
       bottom: 0;
       right: 0;
       transform: rotate(0);
