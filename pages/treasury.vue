@@ -11,7 +11,8 @@ body
                                     p ID:
                                     p 001
                                 p AVAILABLE
-                            img.max-h-36.w-36.bg-white.object-contain.rounded-t-xl(src="~static/imgs/keyboard.png" alt="")
+                            .flex.justify-center
+                                img.max-h-36.w-36.bg-white.object-contain.rounded-t-xl(src="~static/imgs/keyboard.png" alt="")
                             .p-5.space-y-2
                                 .flex.space-x-2
                                     p Item
@@ -29,7 +30,8 @@ body
                                     p ID:
                                     p 001
                                 p AVAILABLE
-                            img.max-h-36.w-36.bg-white.object-contain.rounded-t-xl(src="~static/imgs/keyboard.png" alt="")
+                            .flex.justify-center
+                                img.max-h-36.w-36.bg-white.object-contain.rounded-t-xl(src="~static/imgs/keyboard.png" alt="")
                             .p-5.space-y-2
                                 .flex.space-x-2
                                     p Item

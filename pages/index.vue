@@ -24,7 +24,8 @@ body
                             Input(id="quantity").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Reason :
-                            Input(id="reason").py-2.px-4
+                        .flex.justify-center
+                            textarea(class="shadow border-2 border-grayBG rounded p-2 w-80 h-20 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Reason")
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 PERIOD :
                     .flex.justify-center.pt-4
