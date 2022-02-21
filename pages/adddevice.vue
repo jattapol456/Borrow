@@ -11,6 +11,7 @@ body
                         div(v-else).flex.items-end.space-x-4
                             img(:src="image")
                             button.text-red-main.pb-1(@click="removeImage") Remove image
+
                     .pr-96.space-y-10
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Item :
@@ -40,6 +41,7 @@ export default {
     layout: "layoutadmin",
     data: () => {
         return {
+            files: "",
             image: "",
             name: "",
             brand: "",
@@ -53,6 +55,7 @@ export default {
             if (!files.length) 
                 return;
             this.createImage(files[0]);
+            this.files=files[0]
         },
         createImage(file) {
             const reader = new FileReader();
@@ -66,9 +69,13 @@ export default {
         removeImage (e) {
             this.image = "";
         },
-        addItems() {
-            console.log(this.name);
+        async addItems() {
+            console.log(this.files.name);
+            const ref = this.$fire.storage.ref().child(`images/${this.files.name}`);
+            await ref.put(this.files)
+            const url = await ref.getDownloadURL()
             this.$store.dispatch("addItems", {
+                img: url,
                 name: this.name,
                 brand: this.brand,
                 model: this.model,

@@ -43,8 +43,8 @@ body
                                 .pl-6
                                     input.border(type="time" id="" name="") 
 
-                    .flex.justify-center.pt-10
-                        Buttonred.w-60.h-10 SEND REQUEST 
+                .flex.justify-center.pt-10
+                    Buttonred.w-60.h-10 SEND REQUEST 
 
 </template>
 

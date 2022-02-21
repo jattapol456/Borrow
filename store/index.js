@@ -10,12 +10,13 @@ export const actions = {
   // get
   async fetchItems(context) {
     const res = await this.$axios('http://localhost:3030/items')
-    context.commit('fetchItem', res.data)
+    context.commit('fetchItems', res.data)
   },
 
   // port
   async addItems(context, data) {
     await this.$axios.post('http://localhost:3030/items', {
+      img: data.img,
       name: data.name,
       brand: data.brand,
       model: data.model,

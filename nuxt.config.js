@@ -35,6 +35,23 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyAaOTtXyxD_pxAb8mpxjWP_ZpEfZJssVoE",
+          authDomain: "server-borrow.firebaseapp.com",
+          projectId: "server-borrow",
+          storageBucket: "server-borrow.appspot.com",
+          messagingSenderId: "851070019749",
+          appId: "1:851070019749:web:0212791056e688dbce854c",
+          measurementId: "G-5QPRTGSM3B"
+        },
+        services: {
+          storage: true
+        }
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
