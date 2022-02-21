@@ -2,7 +2,7 @@
 body
     .pt-14.pl-20
         .wrapper.pl-6
-            form
+            form(@submit.prevent="addItems")
                 .pl-16.pt-10.space-y-10
                     div
                         div(v-if="!image").space-y-4
@@ -14,34 +14,37 @@ body
                     .pr-96.space-y-10
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Item :
-                            Input(id="item").py-2.px-4
+                            input(class="input" type="text" id="item" v-model="name").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Brand :
-                            Input(id="brand")
+                            input(class="input" id="brand" v-model="brand")
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Model :
-                            Input(id="model").py-2.px-4
+                            input(class="input" id="model" v-model="model").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Code IP :
-                            Input(id="code_ip").py-2.px-4
+                            input(class="input" id="code_ip" v-model="code_ip").py-2.px-4
                 .flex.justify-center.pt-10
                     Buttonred.w-60.h-10 SEND REQUEST 
+                
 
 </template>
 
 <script lang="js">
 import Buttonred from '../components/Buttonred.vue'
-import Input from '../components/Input.vue'
 
 export default {
 	components: {
         Buttonred,
-        Input,
     },
     layout: "layoutadmin",
     data: () => {
         return {
-            image: ""
+            image: "",
+            name: "",
+            brand: "",
+            model: "",
+            code_ip: "",
         }
     },
     methods: {
@@ -62,6 +65,15 @@ export default {
         },
         removeImage (e) {
             this.image = "";
+        },
+        addItems() {
+            console.log(this.name);
+            this.$store.dispatch("addItems", {
+                name: this.name,
+                brand: this.brand,
+                model: this.model,
+                code_ip: this.code_ip,
+            })
         }
     }
 }

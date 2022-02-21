@@ -11,10 +11,10 @@
 				.form.bg-white.rounded.px-8.pt-16.pb-8
 					.pb-4.space-y-2
 						p Email
-						Input(id="email").py-2.px-4
+						input(class="input" id="email").py-2.px-4
 					.pb-4.space-y-2
 						p Password
-						Input(id="password").py-2.px-4
+						input(class="input" id="password").py-2.px-4
 					.pb-4
 						nuxt-link(to="/")
 							Buttonred.w-full.h-9 Log in
@@ -29,12 +29,10 @@
 ]
 <script lang="js">
 import Buttonred from '../components/Buttonred.vue'
-import Input from '../components/Input.vue'
 
 export default {
 	components: {
         Buttonred,
-        Input,
     },
 	layout: "layoutlogin",
 }

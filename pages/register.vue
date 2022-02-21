@@ -14,22 +14,22 @@ body
                 .px-12.pt-5
                     .pb-4.space-y-2
                         p Firstname
-                        Input(id="firstname").py-2.px-4.w-80
+                        input(class="input" id="firstname").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Lastname
-                        Input(id="lastname").py-2.px-4.w-80
+                        input(class="input" id="lastname").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Email
-                        Input(id="email").py-2.px-4.w-80
+                        input(class="input" id="email").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Password
-                        Input(id="password").py-2.px-4.w-80
+                        input(class="input" id="password").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Phone Number
-                        Input(id="phone_number").py-2.px-4.w-80
+                        input(class="input" id="phone_number").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Employee ID
-                        Input(id="employee_id").py-2.px-4.w-80
+                        input(class="input" id="employee_id").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Division
                         .dropdown.inline-block.relative
@@ -60,12 +60,10 @@ body
 
 <script lang="js">
 import Buttonred from '../components/Buttonred.vue'
-import Input from '../components/Input.vue'
 
 export default {
 	components: {
         Buttonred,
-        Input,
     },
 	layout: "layoutlogin"
 }

@@ -9,19 +9,19 @@ body
                     .pr-96.space-y-6
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Item :
-                            Input(id="item").py-2.px-4
+                            input(class="input" id="item").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Brand :
-                            Input(id="brand").py-2.px-4
+                            input(class="input" id="brand").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Model :
-                            Input(id="model").py-2.px-4
+                            input(class="input" id="model").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Code IP :
-                            Input(id="code_ip").py-2.px-4
+                            input(class="input" id="code_ip").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Quantity :
-                            Input(id="quantity").py-2.px-4
+                            input(class="input" id="quantity").py-2.px-4
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Reason :
                         .flex.justify-center

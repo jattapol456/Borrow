@@ -18,4 +18,10 @@ export default({
     Sidebaradmin,
   },
 })
-</script> 
+</script>
+
+<style lang="scss">
+.input {
+  @apply shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-sm;
+}
+</style>
