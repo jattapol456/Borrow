@@ -9,12 +9,23 @@ header
         input.search(src="~static/icons/search.svg" placeholder="Search" type="text" class="focus:outline-none focus:shadow-outline")
       .flex.items-center.space-x-8
         div
-          img(src="~static/icons/bell.svg")
+          img(src="~static/icons/bell.svg" v-on:click="showwarn=!showwarn")
         div
           p ADMIN
           p Jattapol
         div.pr-6
           img(src="~static/imgs/Prof.png" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
+  div(v-if="showwarn").absolute.right-40.bg-white
+    .border.border-black.pl-2.pr-2
+      p Jattapol
+      .flex.space-x-2
+        .flex.space-x-2
+          p BORROW:
+          p Keyboard
+        .flex.space-x-2
+          p Date:
+          p 07/10/64
+
   div(v-if="show").absolute.right-4.bg-white.space-y-2.border-4
     nuxt-link(to="/profile")
       p.pl-2.pr-2.border.border-black Profile
@@ -28,6 +39,7 @@ export default {
   data() {
     return {
       show: false,
+      showwarn: false,
     }
   }
 }

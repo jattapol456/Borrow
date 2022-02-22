@@ -31,8 +31,6 @@ header
     nuxt-link(to="/login")
       p.pl-2.pr-2.border.border-black Logout
       
-    
-
 </template>
 
 <script lang="js">

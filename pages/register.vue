@@ -30,30 +30,26 @@ body
                     .pb-4.space-y-2
                         p Employee ID
                         input(class="input" id="employee_id").py-2.px-4.w-80
-                    .pb-4.space-y-2
-                        p Division
-                        .dropdown.inline-block.relative
-                            button.bg-gray-200.text-gray-700.py-2.px-4.rounded.inline-flex.items-center
-                                span.mr-1 Division
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                            
-                            ul.dropdown-menu.absolute.hidden.text-gray-700.pt-1
-                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
-                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
-                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
                                 
                     .pb-4.space-y-2
-                        p Department
-                        .dropdown.inline-block.relative
-                            button.bg-gray-200.text-gray-700.py-2.px-4.rounded.inline-flex.items-center
-                                span.mr-1 Department
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                            
-                            ul.dropdown-menu.absolute.hidden.text-gray-700.pt-1
-                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
-                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
-                                li(class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap") One
-                    .pb-4.pt-2
+                    <div class="form-group">
+                        <label for="country" class="col-sm-2 control-label">Division</label>
+                        <div class="col-sm-7">             
+                            select(v-model="selectDivision").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
+                                option(v-for="item in divisions" :value="item.name") {{ item.name }}
+                        </div>
+                    </div>    
+
+                    .pb-4.space-y-2
+                    <div class="form-group">
+                        <label for="state" class="col-sm-2 control-label">Department</label>
+                        <div class="col-sm-7">    
+                            select(v-model="selectDepartment").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
+                                    option(v-for="item in departments" :value="item") {{ item }}
+                        </div>
+                    </div>
+
+                    .pb-4.pt-8
                         nuxt-link(to="/login")
                             Buttonred.w-80.h-10 Register
 </template>
@@ -65,8 +61,70 @@ export default {
 	components: {
         Buttonred,
     },
-	layout: "layoutlogin"
+	layout: "layoutlogin",
+    data() {
+        return {
+            selectDivision: "",
+            selectDepartment: "",
+            divisions: [{
+                name: "ADMINISTRATION DIVISION",
+                departments: ["FINANCIAL PLANNING & COST CONTROL DEPT","HRM & ADMINISTRATION DEPARTMENT","PRODUCTION CONTROL DEPARTMENT","SAFETY AND ENVIRONMENT DEPARTMENT"]
+            },
+            {
+                name: "MANUFACTURING AND ENGINEERING DIVISION",
+                departments: ["DIESEL ENGINE MANUFACTURING DEPARTMENT","GASOLINE ENGINE MANUFACTURING DEPARTMENT","MANUFACTURING ENGINEERING DEPARTMENT"]
+            },
+            {
+                name: "TDEM-ACCOUNTING & SHARED SERVICE CENTER",
+                departments: ["TDEM-(BR) ACCOUNTING SYSTEM REFORM","TDEM-ACCOUNTING EXCELLENCE CENTER","TDEM-PERSONNEL & BUSINESS SERVICES","TDEM-VEHICLE PROFIT MANAGEMENT"]
+            },
+            {
+                name: "TDEM-CUSTOMER SERVICE & QUALITY DIV",
+                departments: ["TDEM-CUSTOMER QUALITY ENGINEERING","TDEM-CUSTOMER TECHNICAL SUPPORT"]
+            },
+            {
+                name: "TDEM-HUMAN RESOURCES DIVISION",
+                departments: ["TDEM-HUMAN RESOURCES","TDEM-REGIONAL HUMAN RESOURCES"]
+            },
+            {
+                name: "TDEM-MFG COMPETITIVENESS ENHANCEMENT DIV",
+                departments: ["TDEM-MFG REINFORCEMENT ASSIST"]
+            },
+            {
+                name: "TDEM-POWERTRAIN ENGINEERING DIVISION",
+                departments: ["TDEM-POWERTRAIN ENGINEERING NO.4"]
+            },
+            {
+                name: "TDEM-PRODUCTION ENGINEERING PLANNING DIV",
+                departments: ["TDEM-SAFETY PROMOTION"]
+            },
+            {
+                name: "TDEM-PURCHASING DIVISION",
+                departments: ["TDEM-MATERIAL, FACILITY & LOGISTIC PURCH","TDEM-UNIT PARTS PURCHASING"]
+            },
+            {
+                name: "TDEM-PURCHASING ENGINEERING DIVISION",
+                departments: ["TDEM-PURCHASING PARTS ENGINEERING","TDEM-SUPPLIER PERFORMANCE & PROJECT MANA"]
+            },
+            {
+                name: "TDEM-PURCHASING ENGINEERING DIVISION",
+                departments: ["TDEM-PURCHASING PARTS ENGINEERING","TDEM-SUPPLIER PERFORMANCE & PROJECT MANA"]
+            },
+            {
+                name: "TDEM-ZEV,PRODUCT PLANNING & ADMIN",
+                departments: ["TDEM-ZEV & TECHNICAL RESEARCH"]
+            },
+            ]
+        }
+    },
+    computed: {
+        departments(){
+            if(this.selectDivision=="")return[]
+            return this.divisions.find(d => d.name == this.selectDivision).departments
+        }
+    }
 }
+
 </script>
 
 <style lang="scss" scoped>
