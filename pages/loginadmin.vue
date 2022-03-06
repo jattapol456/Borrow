@@ -17,11 +17,11 @@
 						p Password
 						input(class="input" id="password").py-2.px-4
 					.pb-4
-						nuxt-link(to="/request")
+						nuxt-link(to="/admin/request")
 							Buttonred.w-full.h-9 Log in
 					.flex
 						p.text-sm.mr-2 Login to	
-						nuxt-link.text-sm.text-red-main(:to="{ path: '/login'}") User
+						nuxt-link.text-sm.text-red-main(:to="{ path: '/'}") User
 
 </template>
 ]

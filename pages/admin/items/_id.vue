@@ -7,33 +7,35 @@ body
                     .flex.justify-between.pr-20
                         .flex.space-x-4
                             p ID :
-                            p 001
-                        a(class="button text-center pt-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-28 h-8 text-white rounded" href="#popup") Request
+                            p {{item._id}}
+                        .space-x-4
+                            a(type="button" class="button text-center bg-red-main focus:bg-red-500 focus:ring-red-200 w-20 h-10 pt-2 text-white rounded" href="#popup") Edit
+                            a(@click="deleteItem()" type="button" class="button text-center bg-red-main focus:bg-red-500 focus:ring-red-200 w-24 h-10 pt-2 text-white rounded" href="") Delete
+                        
 
                     .flex.justify-center.pr-20
-                        img(src="~static/imgs/keyboard.png").h-44
+                        img(:src="item.img").h-44
                                 
                     .pt-6.space-y-4
                         .flex.space-x-4
                             p Equipment : 
-                            p Keyboard
+                            p {{item.name}}
                         .flex.space-x-4
                             p Brand : 
-                            p Dell
+                            p {{item.brand}}
                         .flex.space-x-4
                             p Model : 
-                            p X3
+                            p {{item.model}}
                         .flex.space-x-4
                             p Code : 
-                            p -
+                            p {{item.code_ip}}
                         .flex.space-x-4
                             p Status : 
-                            p AVAILABLE
+                            p {{item.statusitem}}
                         .space-x-4
                             p Problem : 
                             .pl-4
-                                p ปุ่ม Enter กดไม่ได
-                                p ปุ่ม S ใช้ไม่ได้
+                                p(v-for="(p) in item.problem") {{p}}
                         p Borrowing History :
                         .pl-10.pr-20.table-container
                             table.table-auto.w-full.border
@@ -60,57 +62,103 @@ body
             .popup(id="popup")
                 .popup-inner
                     .pl-24.pt-10
-                        .flex.justify-center.pt-4
-                            .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
-                                .space-y-4
-                                    p BORROW :
-                                    .pl-6
-                                        input.border(type="date" id="" name="")
-                                    .pl-6
-                                        input.border(type="time" id="" name="")
-                                .space-y-4
-                                    p RETURN :
-                                    .pl-6
-                                        input.border(type="date" id="" name="")
-                                    .pl-6
-                                        input.border(type="time" id="" name="") 
+                        .flex.justify-end.items-center.space-x-4.pr-80
+                            p Item :
+                            input(class="input" v-model="name").py-2.px-4
+                        .flex.justify-end.items-center.space-x-4.pr-80
+                            p Brand :
+                            input(class="input" v-model="brand")
+                        .flex.justify-end.items-center.space-x-4.pr-80
+                            p Model :
+                            input(class="input" v-model="model").py-2.px-4
+                        .flex.justify-end.items-center.space-x-4.pr-80
+                            p Code IP :
+                            input(class="input" v-model="code_ip").py-2.px-4
 
-                        .flex.justify-center.pt-10
+                        .flex.justify-center.pt-10(@click="submitedit()")
                             Buttonred.w-60.h-10 SEND REQUEST
                     a.popup__close(href="#") X
 
 </template>
 
 <script lang="js">
-import Buttonred from '../components/Buttonred.vue'
+// import Buttonred from '../components/Buttonred.vue'
 
 export default {
-	components: {
-        Buttonred,
+    layout: "layoutadmin",
+	// components: {
+    //     Buttonred,
+    // },
+    data() {
+        return {
+            item: {},
+            name: "",
+            brand: "",
+            model: "",
+            code_ip: "",
+            statusitem: "",
+        }
     },
-    
+    mounted(){
+        this.getItemByID()
+    },
+    methods: {
+        async getItemByID() {
+            const res = await this.$axios(
+                `http://localhost:3030/items/${this.$route.params.id}`
+            )
+            this.item = res.data
+            this.name = res.data.name
+            this.brand = res.data.brand
+            this.model = res.data.model
+            this.code_ip = res.data.code_ip
+            this.statusitem = res.data.statusitem
+        },
+        async submitedit() {
+            const res = await this.$axios.patch(
+                `http://localhost:3030/items/${this.$route.params.id}`,{
+                    name: this.name,
+                    brand: this.brand,
+                    model: this.model,
+                    code_ip: this.code_ip
+                }
+            )
+            location.reload()
+        },
+        async deleteItem() {
+            const res = await this.$axios.delete(
+                `http://localhost:3030/items/${this.$route.params.id}`
+            )
+            this.$router.push("/admin/treasury")
+        }
+    }
+
+
+
 }
 </script>
 
 <style lang="scss" scoped>
-.wrapper {	
-	margin-top: 20px;
-    margin-bottom: 80px;
+.wrapper {
+  margin-top: 20px;
+  margin-bottom: 80px;
 }
 form {
-    background: #FFFFFF;
-    padding-bottom: 45px;
-    width: 1100px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  background: #ffffff;
+  padding-bottom: 45px;
+  width: 1100px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-html, body {
+html,
+body {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {
-  html, body {
+  html,
+  body {
     font-size: 12px;
   }
 }
@@ -124,11 +172,11 @@ html, body {
   height: 100vh;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, .80);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 2;
   visibility: hidden;
   opacity: 0;
-  transition: .64s ease-in-out;
+  transition: 0.64s ease-in-out;
   &-inner {
     position: relative;
     bottom: -100vw;
@@ -141,7 +189,7 @@ html, body {
     height: 60%;
     background-color: #fff;
     transform: rotate(32deg);
-    transition: .64s ease-in-out;
+    transition: 0.64s ease-in-out;
   }
   &:target {
     visibility: visible;
@@ -158,10 +206,10 @@ html, body {
     top: -1rem;
     width: 3rem;
     height: 3rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 300;
     border-radius: 100%;
-    background-color: #0A0A0A;
+    background-color: #0a0a0a;
     z-index: 4;
     color: #fff;
     line-height: 3rem;

@@ -25,6 +25,10 @@ body
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Code IP :
                             input(class="input" id="code_ip" v-model="code_ip").py-2.px-4
+                        .flex.justify-end.items-center.space-x-4.pr-80
+                            p Status :
+                            input(class="input" type="text" id="statusitem" v-model="statusitem").py-2.px-4
+
                 .flex.justify-center.pt-10
                     Buttonred.w-60.h-10 SEND REQUEST 
                 
@@ -32,7 +36,7 @@ body
 </template>
 
 <script lang="js">
-import Buttonred from '../components/Buttonred.vue'
+import Buttonred from '../../components/Buttonred.vue'
 
 export default {
 	components: {
@@ -47,6 +51,7 @@ export default {
             brand: "",
             model: "",
             code_ip: "",
+            statusitem: "",
         }
     },
     methods: {
@@ -70,17 +75,18 @@ export default {
             this.image = "";
         },
         async addItems() {
-            console.log(this.files.name);
             const ref = this.$fire.storage.ref().child(`images/${this.files.name}`);
             await ref.put(this.files)
             const url = await ref.getDownloadURL()
             this.$store.dispatch("addItems", {
-                img: url,
-                name: this.name,
-                brand: this.brand,
-                model: this.model,
-                code_ip: this.code_ip,
+                img:url,
+                name:this.name,
+                brand:this.brand,
+                model:this.model,
+                code_ip:this.code_ip,
+                statusitem:this.statusitem
             })
+            // location.reload()
         }
     }
 }

@@ -1,7 +1,7 @@
 <template lang="pug">
 header
   .container.bg-white
-    .w-full.h-16.flex.justify-between.items-center.px-3
+    .w-full.h-16.w-full.max-w-screen.flex.justify-between.items-center.px-3
       .flex.space-x-20
         .flex.items-center.pl-2
           a.text-4xl.font-black.text-red-main IT
@@ -27,8 +27,6 @@ header
           p 07/10/64
 
   div(v-if="show").absolute.right-4.bg-white.space-y-2.border-4
-    nuxt-link(to="/profile")
-      p.pl-2.pr-2.border.border-black Profile
     nuxt-link(to="/loginadmin")
       p.pl-2.pr-2.border.border-black Logout
 

@@ -1,16 +1,27 @@
 export const state = () => {
-  return { items: [] }
+  return { equipment: [], search: "" }
 }
 export const mutations = {
   fetchItems(state, data) {
-    state.items = data
+    state.equipment = data
   },
+  setsearchitem(state, search){
+    state.search = search
+    console.log(search);
+  }
 }
 export const actions = {
   // get
-  async fetchItems(context) {
-    const res = await this.$axios('http://localhost:3030/items')
+  async fetchItems(context,search) {
+    let url = ""
+    if(search != ""){
+      url = `http://localhost:3030/items/search/`+search 
+
+    }
+    else{url = 'http://localhost:3030/items'}
+    const res = await this.$axios(url)
     context.commit('fetchItems', res.data)
+    console.log(res.data);
   },
 
   // port
@@ -21,8 +32,9 @@ export const actions = {
       brand: data.brand,
       model: data.model,
       code_ip: data.code_ip,
+      statusitem: data.statusitem,
     })
   },
 }
 
-export const getters = { getData: (state) => state.items }
+export const getters = { getData: (state) => state.items, getsearch: (state) => state.search }
