@@ -12,9 +12,9 @@ header
         div
           img(src="~static/icons/bell.svg" v-on:click="showwarn=!showwarn")
         div
-          p Jattapol
+          p {{ user.firstname }}
         .pr-6
-          img(src="~static/imgs/Prof.png" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
+          img(:src="user.profileimg" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
   .absolute.right-40.bg-white(v-if="showwarn")
     .border.border-black.pl-2.pr-2
       p Allow
@@ -41,6 +41,7 @@ export default {
       show: false,
       showwarn: false,
       search: "",
+      user: {},
     }
   },
   mounted(){
@@ -49,12 +50,12 @@ export default {
   },
   methods:{
     async findByUserId(){
-        const res = await this.$axios.get(`http://localhost:3030/borrows/userborrow`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-        this.items = res.data
+      const res = await this.$axios.get(`http://localhost:3030/borrows/userborrow`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+      this.items = res.data
     },
     async findUserProfile(){
-        const res = await this.$axios.get(`http://localhost:3030/users`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-        this.user = res.data
+      const res = await this.$axios.get(`http://localhost:3030/users/profile`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+      this.user = res.data
     },
   },
   watch:{

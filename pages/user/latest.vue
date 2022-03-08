@@ -23,7 +23,6 @@ body
                                     .pl-12
                                         p(v-for="(p) in item.problem") - {{p}}
                                 
-
 </template>
 
 <script lang="js">

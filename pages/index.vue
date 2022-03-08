@@ -11,10 +11,10 @@
 				.form.bg-white.rounded.px-8.pt-16.pb-8
 					.pb-4.space-y-2
 						p Email
-						input(class="input" id="email" v-model="email").py-2.px-4
+						input(class="input" type="email" autocomplete="email" v-model="email").py-2.px-4
 					.pb-4.space-y-2
 						p Password
-						input(class="input" id="password" v-model="password").py-2.px-4
+						input(class="input" type="password" autocomplete="new-password" v-model="password").py-2.px-4
 					.pb-4(@click="login()")
 						Buttonred.w-full.h-9 Log in
 					.flex

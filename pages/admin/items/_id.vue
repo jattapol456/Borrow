@@ -31,7 +31,7 @@ body
                             p {{item.code_ip}}
                         .flex.space-x-4
                             p Status : 
-                            p {{item.statusitem}}
+                            p(:class="`${item.statusitem=='AVAILABLE'?' text-green-700 ':' text-red-700 '}`") {{item.statusitem}}
                         .space-x-4
                             p Problem : 
                             .pl-4
@@ -82,13 +82,9 @@ body
 </template>
 
 <script lang="js">
-// import Buttonred from '../components/Buttonred.vue'
 
 export default {
     layout: "layoutadmin",
-	// components: {
-    //     Buttonred,
-    // },
     data() {
         return {
             item: {},

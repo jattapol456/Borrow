@@ -14,22 +14,22 @@ body
                 .px-12.pt-5
                     .pb-4.space-y-2
                         p Firstname
-                        input(class="input" id="firstname" v-model="firstname").py-2.px-4.w-80
+                        input(class="input" v-model="firstname").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Lastname
-                        input(class="input" id="lastname" v-model="lastname").py-2.px-4.w-80
+                        input(class="input" v-model="lastname").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Email
-                        input(class="input" id="email" v-model="email").py-2.px-4.w-80
+                        input(class="input" type="email" autocomplete="email" v-model="email").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Password
-                        input(class="input" id="password" v-model="password").py-2.px-4.w-80
+                        input(class="input" type="password" autocomplete="new-password" v-model="password").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Phone Number
-                        input(class="input" id="phone_number" v-model="phone_number").py-2.px-4.w-80
+                        input(class="input" v-model="phone_number").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Employee ID
-                        input(class="input" id="employee_id" v-model="employee_id").py-2.px-4.w-80
+                        input(class="input"  v-model="employee_id").py-2.px-4.w-80
                                 
                     .pb-4.space-y-2
                         .form-group

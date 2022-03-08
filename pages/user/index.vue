@@ -18,7 +18,7 @@ body
                                     p {{ item.name }}
                                 p Problem
                                 .flex.items-center.space-x-2
-                                    .pl-6
+                                    .pl-12
                                         p(v-for="(p) in item.problem") - {{p}}
                                 
 </template>
