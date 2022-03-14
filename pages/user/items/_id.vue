@@ -91,10 +91,6 @@ export default {
             model: "",
             code_ip: "",
             reason: "",
-            dateborrow: "",
-            timeborrow: "",
-            datereturn: "",
-            timereturn: "",
         }
     },
     mounted(){
@@ -135,9 +131,6 @@ export default {
         }
 
     }
-
-
-
 }
 </script>
 

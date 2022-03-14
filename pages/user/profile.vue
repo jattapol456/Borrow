@@ -38,12 +38,14 @@ body
                                         th.pl-4.text-left EQUIPMENT
                                         th.text-left BORROW
                                         th.text-left RETURN
+                                        th.text-left STATUS
                                         th.text-left ACTION
                                 tbody.h-10
                                     tr.border(v-for="item in items" :key="item._id")
                                         td.pl-4 {{item.item_id.name}}
                                         td(data-th="BORROW") {{item.dateborrow}}
                                         td(data-th="RETURN") {{item.datereturn}}
+                                        td(data-th="STATUS") {{item.status}}
                                         td
                                             a(@click="select(item)" class="button text-center text-xs p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-6 text-white rounded" href="#popup") Request
         

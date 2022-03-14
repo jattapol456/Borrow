@@ -45,18 +45,12 @@ body
                                         th.text-left BORROW
                                         th.text-left RETURN
                                         th.text-left PROBLEM
-                                tbody.h-10
+                                tbody.h-10(v-for="user in users")
                                     tr.border.border-gray-500
-                                        td.pl-4(data-th="NAME") Asada
-                                        td(data-th="BORROW") 23/11/2021
-                                        td(data-th="RETURN") 25/11/2021
-                                        td(data-th="PROBLEM") ปุ่ม Enter กดไม่ได
-                                tbody.h-10
-                                    tr.border.border-gray-500
-                                        td.pl-4(data-th="NAME") Werayut
-                                        td(data-th="BORROW") 11/10/2021
-                                        td(data-th="RETURN") 22/10/2021
-                                        td(data-th="PROBLEM") ปุ่ม S ใช้ไม่ได้
+                                        td.pl-4(data-th="NAME") {{user.user_id.firstname}}
+                                        td(data-th="BORROW") {{user.dateborrow}}
+                                        td(data-th="RETURN") {{user.datereturn}}
+                                        td(data-th="PROBLEM") {{user.problem}}
 
 
             .popup(id="popup")
@@ -88,15 +82,21 @@ export default {
     data() {
         return {
             item: {},
+            users: [],
             name: "",
             brand: "",
             model: "",
             code_ip: "",
             statusitem: "",
+            dateborrow: "",
+            timeborrow: "",
+            datereturn: "",
+            timereturn: "",
         }
     },
     mounted(){
         this.getItemByID()
+        this.getUser()
     },
     methods: {
         async getItemByID() {
@@ -109,6 +109,12 @@ export default {
             this.model = res.data.model
             this.code_ip = res.data.code_ip
             this.statusitem = res.data.statusitem
+        },
+        async getUser() {
+            const res = await this.$axios(
+                `http://localhost:3030/borrows/borrowByItemId/${this.$route.params.id}`
+            )
+            this.users = res.data
         },
         async submitedit() {
             const res = await this.$axios.patch(

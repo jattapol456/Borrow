@@ -11,6 +11,7 @@ body
                               th.text-left NAME
                               th.text-left EMPLOYEE ID
                               th.text-left SECTION
+                              th.text-left ROLE
                               th.text-left ACTION
                       tbody.h-10
                           tr.border(v-for="item in items")
@@ -19,6 +20,7 @@ body
                               td(data-th="NAME") {{ item.firstname }}
                               td(data-th="NAME") {{ item.employee_id }}
                               td(data-th="SECTION") {{ item.section }}
+                              td(data-th="ROLE") {{ item.role }}
                               td(data-th="ACTION")
                                 button(@click="deleteUser(item._id)" type="button" class="button text-center text-sm p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-20 h-9 text-white rounded") Delete
             

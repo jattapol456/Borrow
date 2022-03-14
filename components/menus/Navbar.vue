@@ -15,16 +15,18 @@ header
           p {{ user.firstname }}
         .pr-6
           img(:src="user.profileimg" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
+
   .absolute.right-40.bg-white(v-if="showwarn")
-    .border.border-black.pl-2.pr-2
+    .border.border-black.pl-2.pr-2(v-for="item in items")
       p Allow
       .flex.space-x-2
         .flex.space-x-2
-          p BORROW:
-          p Keyboard
+          p {{ getStatusName(item.status) }}
+          p {{ item.item_id.name }}
         .flex.space-x-2
           p Date:
-          p 12/11/64
+          p {{ dateformat(item.update) }}
+      button(@click="remove(item._id)") ลบ
 
   .absolute.right-4.bg-white.space-y-2.border-4(v-if="show")
     nuxt-link(to="/user/profile")
@@ -42,21 +44,36 @@ export default {
       showwarn: false,
       search: "",
       user: {},
+      items: [],
     }
   },
-  mounted(){
-    this.findByUserId()
+  async mounted(){
+    // this.findByUserId()
     this.findUserProfile()
+    const res = await this.$axios.get(`http://localhost:3030/borrows/usernoti`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    console.log(res.data);
+    this.items = res.data
   },
   methods:{
-    async findByUserId(){
-      const res = await this.$axios.get(`http://localhost:3030/borrows/userborrow`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-      this.items = res.data
-    },
+    // async findByUserId(){
+    //   const res = await this.$axios.get(`http://localhost:3030/borrows/userborrow`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    //   this.items = res.data
+    // },
     async findUserProfile(){
       const res = await this.$axios.get(`http://localhost:3030/users/profile`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
       this.user = res.data
     },
+     getStatusName(status){
+      if(status == "approve")return"BORROW"
+      else if(status == "completed")return"RETURN"
+    },
+    dateformat(date) {
+      return new Intl.DateTimeFormat(['ban', 'id']).format(new Date(date))
+    },
+    async remove(id){
+      await this.$axios.delete(`http://localhost:3030/borrows/usernoti/${id}`)
+      location.reload()
+    }
   },
   watch:{
     search(){

@@ -16,7 +16,7 @@ body
                                 th.text-left BORROW
                                 th.text-left RETURN
                                 th.text-left ACTION
-                        tbody.h-10
+                        tbody.h-12
                             tr.border(v-for="item in items" :key="item._id")
                                 td.pl-4(data-th="NAME") {{ item.user_id.firstname }}
                                 td(data-th="DATE") {{ item.datereturn }}
@@ -150,7 +150,6 @@ export default {
                     statusitem: "UNAVAILABLE",
                 }
             )
-            console.log(item);
             location.reload()
         },
 

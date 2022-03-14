@@ -4,7 +4,7 @@ body
         .wrapper.pl-6
             form.p-4
                 .grid.grid-cols-2(class="lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-5")     
-                    .border.bg-white.border-gray-500(v-for="item in equipment" :key="item._id")
+                    .border.bg-white.border-gray-500(v-for="item in items" :key="item._id")
                         nuxt-link(:to="`/admin/items/${item._id}`")
                             .flex.justify-between.pl-2.pr-2
                                 .flex.space-x-1
@@ -21,6 +21,9 @@ body
                                 .flex.items-center.space-x-2
                                     .pl-6
                                         p(v-for="(p) in item.problem") - {{p}}
+                                .flex.items-center.space-x-2
+                                    .pl-6
+                                        p {{item.count}}
 </template>
 
 <script lang="js">
@@ -28,16 +31,13 @@ export default {
     layout: "layoutadmin",
     data() {
         return {
-            item: {},
-        }
-    },
-    computed: {
-        equipment(){
-            return this.$store.state.equipment
+            items: {},
         }
     },
     async mounted (){
-        await this.$store.dispatch("fetchItems")
+        const res = await this.$axios.get(`http://localhost:3030/items/frequent`)
+        this.items = res.data
+
     },
     
 }
