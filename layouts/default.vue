@@ -23,4 +23,7 @@ export default({
 .input {
   @apply shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-sm;
 }
+body {
+  font-family: 'Raleway', sans-serif;
+}
 </style>

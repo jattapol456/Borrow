@@ -9,11 +9,8 @@ body
                             p ID :
                             p {{item._id}}
                         a(class="text-center focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-32 h-10 pt-2 text-white rounded" href="#popup") Request
-                        
-
                     .flex.justify-center.pr-20
                         img(:src="item.img").h-44
-                                
                     .pt-6.space-y-4
                         .flex.space-x-4
                             p Equipment : 
@@ -49,8 +46,6 @@ body
                                         td(data-th="BORROW") {{user.dateborrow}}
                                         td(data-th="RETURN") {{user.datereturn}}
                                         td(data-th="PROBLEM") {{user.problem}}
-
-
             .popup(id="popup")
                 .popup-inner
                     .pl-24.pt-10
@@ -72,7 +67,6 @@ body
                                         input.border(type="date" id="" name="" v-model="datereturn" )
                                     .pl-6
                                         input.border(type="time" id="" name="" v-model="timereturn" ) 
-
                         .flex.justify-center.pt-10(@click="postBorrow()")
                             Buttonred.w-60.h-10 SEND REQUEST
                     a.popup__close(href="#") X
@@ -129,7 +123,6 @@ export default {
             })
             location.reload()
         }
-
     }
 }
 </script>

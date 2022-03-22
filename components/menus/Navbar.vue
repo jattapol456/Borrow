@@ -9,15 +9,20 @@ header
         input.search(src="~static/icons/search.svg" placeholder="Search" type="text" v-model="search" class="focus:outline-none focus:shadow-outline")
 
       .flex.items-center.space-x-8
-        div
-          img(src="~static/icons/bell.svg" v-on:click="showwarn=!showwarn")
+        button
+          img.-mt-3(src="~static/icons/bell.svg" v-on:click="showwarn=!showwarn")
+          span.flex.h-3.w-3.ml-4.-mt-7
+            span.animate-ping.absolute.inline-flex.h-3.w-3.rounded-full.bg-red-main.opacity-75
+            span.relative.inline-flex.h-3.w-3.rounded-full.bg-red-main
+
         div
           p {{ user.firstname }}
         .pr-6
           img(:src="user.profileimg" v-on:click="show=!show").object-cover.h-10.w-10.rounded-full
 
-  .absolute.right-40.bg-white(v-if="showwarn")
-    .border.border-black.pl-2.pr-2(v-for="item in items")
+
+  .absolute.right-40.bg-white.space-y-2.border-4px-2.py-2.rounded-md.shadow(v-if="showwarn")
+    .pl-2.pr-2(v-for="item in items")
       p Allow
       .flex.space-x-2
         .flex.space-x-2
@@ -26,13 +31,13 @@ header
         .flex.space-x-2
           p Date:
           p {{ dateformat(item.update) }}
-      button(@click="remove(item._id)") ลบ
+      button.text-red-main(@click="remove(item._id)") Delete
 
-  .absolute.right-4.bg-white.space-y-2.border-4(v-if="show")
+  .absolute.right-5.bg-white.space-y-2.border-4px-2.py-2.rounded-md.shadow(v-if="show")
     nuxt-link(to="/user/profile")
-      p.pl-2.pr-2.border.border-black Profile
+      p.pl-2.pr-2 Profile
     nuxt-link(to="/")
-      p.pl-2.pr-2.border.border-black Logout
+      p.pl-2.pr-2 Logout
       
 </template>
 
@@ -48,17 +53,12 @@ export default {
     }
   },
   async mounted(){
-    // this.findByUserId()
     this.findUserProfile()
     const res = await this.$axios.get(`http://localhost:3030/borrows/usernoti`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     console.log(res.data);
     this.items = res.data
   },
   methods:{
-    // async findByUserId(){
-    //   const res = await this.$axios.get(`http://localhost:3030/borrows/userborrow`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    //   this.items = res.data
-    // },
     async findUserProfile(){
       const res = await this.$axios.get(`http://localhost:3030/users/profile`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
       this.user = res.data
@@ -73,11 +73,11 @@ export default {
     async remove(id){
       await this.$axios.delete(`http://localhost:3030/borrows/usernoti/${id}`)
       location.reload()
-    }
+    },
   },
   watch:{
     search(){
-      this.$store.commit("setsearchitem",this.search)
+      this.$store.commit("setsearchitem",this.search,this.status)
     }
   }
   

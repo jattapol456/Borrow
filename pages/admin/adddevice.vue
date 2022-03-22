@@ -11,7 +11,6 @@ body
                         div(v-else).flex.items-end.space-x-4
                             img(:src="image")
                             button.text-red-main.pb-1(@click="removeImage") Remove image
-
                     .pr-96.space-y-10
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Item :
@@ -30,9 +29,8 @@ body
                             input(class="input" type="text" id="statusitem" v-model="statusitem").py-2.px-4
 
                 .flex.justify-center.pt-10
-                    Buttonred.w-60.h-10 SEND REQUEST 
+                    Buttonred.w-60.h-10 ADD DIVICE
                 
-
 </template>
 
 <script lang="js">
@@ -86,7 +84,7 @@ export default {
                 code_ip:this.code_ip,
                 statusitem:this.statusitem
             })
-            // location.reload()
+            location.reload()
         }
     }
 }

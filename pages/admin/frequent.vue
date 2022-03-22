@@ -14,16 +14,22 @@ body
                                 img.max-h-36.w-36.bg-white.object-contain(:src="item.img")
                             .p-5.space-y-2
                                 .flex.space-x-2
-                                    p Item
-                                    p {{ item.name }}
-                                
-                                p Problem
+                                    p.text-sm Item
+                                    p.text-sm {{ item.name }}
+                                .flex.space-x-2
+                                    p.text-sm Brand
+                                    p.text-sm {{ item.brand }}
+                                .flex.space-x-2
+                                    p.text-sm Model
+                                    p.text-sm {{ item.model }}
+                                p.text-sm Problem
                                 .flex.items-center.space-x-2
-                                    .pl-6
+                                    .pl-12.text-sm
                                         p(v-for="(p) in item.problem") - {{p}}
                                 .flex.items-center.space-x-2
-                                    .pl-6
-                                        p {{item.count}}
+                                    .flex.space-x-2
+                                        p.text-sm Count :
+                                        p.text-sm {{item.count}}
 </template>
 
 <script lang="js">
@@ -31,7 +37,7 @@ export default {
     layout: "layoutadmin",
     data() {
         return {
-            items: {},
+            items: [],
         }
     },
     async mounted (){
@@ -39,7 +45,6 @@ export default {
         this.items = res.data
 
     },
-    
 }
 </script>
 
@@ -54,5 +59,4 @@ form {
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
 </style>

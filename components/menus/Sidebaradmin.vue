@@ -7,7 +7,7 @@
             nuxt-link(to="/admin/treasury")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Treasurys
             nuxt-link(to="/admin/frequent") 
-                button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") frequent
+                button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Frequents
             nuxt-link(to="/admin/adddevice")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Add device
             nuxt-link(to="/admin/management")

@@ -4,10 +4,9 @@
         nav.text-white.text-base.space-y-1
             nuxt-link(to="/user/")
                 button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Treasury
-            nuxt-link(to="/user/return") 
-                button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Return
+            nuxt-link(to="/user/borrowingitems") 
+                button(class="text-xl text-left pl-8 bg-red-main focus:bg-red-button1 focus:ring focus:ring-red-200 w-full h-16") Borrowing items
            
-
 </template>
 <script lang="js">
 export default {}

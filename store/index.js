@@ -1,5 +1,5 @@
 export const state = () => {
-  return { equipment: [], search: "" }
+  return { equipment: [], search: "" ,status: ""}
 }
 export const mutations = {
   fetchItems(state, data) {
@@ -7,21 +7,20 @@ export const mutations = {
   },
   setsearchitem(state, search){
     state.search = search
-    console.log(search);
   }
 }
 export const actions = {
   // get
-  async fetchItems(context,search) {
+  async fetchItems(context,search,status) {
     let url = ""
     if(search != ""){
       url = `http://localhost:3030/items/search/`+search 
-
     }
     else{url = 'http://localhost:3030/items'}
     const res = await this.$axios(url)
-    context.commit('fetchItems', res.data)
-    console.log(res.data);
+    let items = res.data
+    items = res.data.sort((i) => i.statusitem == "AVAILABLE"? -1:1)
+    context.commit('fetchItems', items)
   },
 
   // port

@@ -11,7 +11,6 @@ body
                         thead.h-12
                             tr.border
                                 th.pl-4.text-left NAME
-                                th.text-left DATE
                                 th.text-left EQUIPMENT
                                 th.text-left BORROW
                                 th.text-left RETURN
@@ -19,7 +18,6 @@ body
                         tbody.h-12
                             tr.border(v-for="item in items" :key="item._id")
                                 td.pl-4(data-th="NAME") {{ item.user_id.firstname }}
-                                td(data-th="DATE") {{ item.datereturn }}
                                 td(data-th="EQUIPMENT") {{ item.item_id.name }}
                                 td(data-th="BORROW") {{ item.dateborrow }}
                                 td(data-th="RETURN") {{ item.datereturn }}
@@ -39,8 +37,7 @@ body
                         .flex.justify-center
                             .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
                                 .flex.justify-center
-                                    img(:src="selectitem.item_id.img").max-h-36.w-36
-                                            
+                                    img(:src="selectitem.item_id.img").max-h-36.w-36  
                                 .pt-6.space-y-4
                                     .flex.space-x-4
                                         p Borrower : 
@@ -66,10 +63,8 @@ body
                                     .flex.space-x-4
                                         p RETURN : 
                                         p {{ selectitem.datereturn }}
-
                         .flex.justify-center.pt-10(@click="approve(selectitem)")
                             Buttonred.w-60.h-10 APPROVE
-                            
                     a.popup__close(href="#") X
 
         .wrapper.pl-6(v-else)
@@ -79,20 +74,18 @@ body
                         thead.h-12
                             tr.border
                                 th.pl-4.text-left NAME
-                                th.text-left DATE
                                 th.text-left EQUIPMENT
                                 th.text-left RETURN
                                 th.text-left TIME
                                 th.text-left ACTION
-                        tbody.h-10
+                        tbody.h-12
                             tr.border(v-for="item in itemreturn" :key="item._id")
                                 td.pl-4(data-th="NAME") {{ item.user_id.firstname }}
-                                td(data-th="DATE") {{ item.datereturn }}
                                 td(data-th="EQUIPMENT") {{ item.item_id.name }}
                                 td(data-th="RETURN") {{ item.datereturn }}
                                 td(data-th="TIME") {{ item.timereturn }}
                                 td
-                                    a(@click="select(item)" class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popupreturn") EXAMINE
+                                    a(@click="select(item)" class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popupreturn") CONFIRM
      
                 .popupreturn(id="popupreturn")
                     .popupreturn-inner(v-if="selectitem!=null")
@@ -113,7 +106,6 @@ body
                             .flex.justify-center.pt-10(@click="updateProblem(selectitem)")
                                 Buttonred.w-60.h-10 APPROVE
                         a.popup__close(href="#") X
-
 
 </template>
 
@@ -152,7 +144,6 @@ export default {
             )
             location.reload()
         },
-
         select(item){
             this.selectitem = item
         },
@@ -175,10 +166,8 @@ export default {
                     statusitem: "AVAILABLE",
                 }
             )
-
         }
     }
-
 }
 </script>
 
@@ -192,11 +181,6 @@ form {
   padding-bottom: 45px;
   width: 1100px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-html,
-body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {

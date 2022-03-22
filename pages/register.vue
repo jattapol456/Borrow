@@ -3,6 +3,10 @@ body
     .wrapper
         .form
             .main.w-full
+                div
+                    nuxt-link.text-sm(:to="{ path: '/'}").flex.text-center.space-x-2
+                        img(src="~static/icons/goback.svg").h-6.w-6
+                        p.font-semibold Go back
                 .bg-white
                     .flex.justify-center
                         h1.text-6xl.font-black.text-red-main IT
@@ -10,7 +14,6 @@ body
             .regis.pl-16
                 .pt-10
                     a.text-xl Register
-                    
                 .px-12.pt-5
                     .pb-4.space-y-2
                         p Firstname
@@ -37,21 +40,18 @@ body
                             .col-sm-7          
                                 select(v-model="selectDivision").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
                                     option(v-for="item in divisions" :value="item.name") {{ item.name }}
-                            
                     .pb-4.space-y-2
                         .form-group
                             label(for="state" class="col-sm-2 control-label") Department
                             .col-sm-7  
                                 select(v-model="selectDepartment").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
                                         option(v-for="item in departments" :value="item") {{ item }}
-                        
                     .pb-4.space-y-2
                         .form-group
                             label(for="state" class="col-sm-2 control-label") Section
                             .col-sm-7  
                                 select(v-model="selectSection").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
-                                        option(v-for="item in sections" :value="item") {{ item }}
-                                            
+                                        option(v-for="item in sections" :value="item") {{ item }}                   
                     .pb-4.space-y-2
                         div(v-if="!image").space-y-4
                             h2 Profile image
@@ -59,7 +59,6 @@ body
                         div(v-else).flex.items-end.space-x-4
                             img(:src="image").h-32.w-32
                             button.text-red-main.pb-1(@click="removeImage") Remove image
-
                     .pb-4.pt-8(@click="register()")
                         Buttonred.w-80.h-10 Register
 </template>
@@ -303,7 +302,6 @@ export default {
                 })
             this.$router.push("/")
         }
-
     }
 }
 </script>

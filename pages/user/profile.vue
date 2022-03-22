@@ -6,8 +6,7 @@ body
                 .pl-20
                     .flex.justify-between.pr-20
                         img(:src="user.profileimg").h-44.object-cover.rounded-full
-                        a(type="button" class="text-center focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-32 h-10 pt-2 text-white rounded" href="#popupedit") Edit
-                        
+                        a(type="button" class="text-center focus:outline-none bg-red-main focus:bg-red-500 focus:ring focus:ring-red-200 w-32 h-10 pt-2 text-white rounded" href="#popupedit") Edit 
                     .pt-6.space-y-4
                         .flex.space-x-4
                             p Name : 
@@ -48,24 +47,22 @@ body
                                         td(data-th="STATUS") {{item.status}}
                                         td
                                             a(@click="select(item)" class="button text-center text-xs p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-6 text-white rounded" href="#popup") Request
-        
             .popup(id="popup")
-                    .popup-inner(v-if="selectitem!=null")
-                        .pl-24
-                            .flex.justify-center.pt-4
-                                .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
-                                    .space-y-4
-                                        p RETURN :
-                                        .pl-6
-                                            p Datereturn
-                                            p {{ selectitem.dateborrow }}
-                                        .pl-6
-                                            input.border(v-model="datereturn" type="time" id="" name="") 
+                .popup-inner(v-if="selectitem!=null")
+                    .pl-24
+                        .flex.justify-center.pt-4
+                            .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
+                                .space-y-4
+                                    p RETURN :
+                                    .pl-6
+                                        p Datereturn
+                                        p {{ selectitem.dateborrow }}
+                                    .pl-6
+                                        input.border(v-model="datereturn" type="time" id="" name="") 
 
-                            .flex.justify-center.pt-10(@click="waitreturn(selectitem)")
-                                Buttonred.w-60.h-10 RETURN
-                        a.popup__close(href="#") X
-
+                        .flex.justify-center.pt-10(@click="waitreturn(selectitem)")
+                            Buttonred.w-60.h-10 RETURN
+                    a.popup__close(href="#") X
             .popupedit(id="popupedit")
                 .popupedit-inner
                     .pl-24
@@ -81,34 +78,29 @@ body
                                             input(class="input" v-model="lastname").py-2.px-4.w-80
                                     .pb-4.space-y-2
                                         p Phone Number
-                                        input(class="input" v-model="phone_number").py-2.px-4.w-80
-                                    
+                                        input(class="input" v-model="phone_number").py-2.px-4.w-80 
                                     .pb-4.space-y-2
                                         .form-group
                                             label(for="country" class="col-sm-2 control-label") Division
                                             .col-sm-7          
                                                 select(v-model="selectDivision").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
-                                                    option(v-for="item in divisions" :value="item.name") {{ item.name }}
-                                            
+                                                    option(v-for="item in divisions" :value="item.name") {{ item.name }}  
                                     .flex.space-x-2 
                                         .pb-4.space-y-2
                                             .form-group
                                                 label(for="state" class="col-sm-2 control-label") Department
                                                 .col-sm-7  
                                                     select(v-model="selectDepartment").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
-                                                            option(v-for="item in department" :value="item") {{ item }}
-                                            
+                                                            option(v-for="item in department" :value="item.name") {{ item.name }}
                                         .pb-4.space-y-2
                                             .form-group
                                                 label(for="state" class="col-sm-2 control-label") Section
                                                 .col-sm-7  
                                                     select(v-model="selectSection").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
                                                             option(v-for="item in sections" :value="item") {{ item }}
-                            
-                        .flex.justify-center.pt-10(@click="submitedit()")
+                        .flex.justify-center.pt-8(@click="submitedit()")
                             Buttonred.w-60.h-10 Edit
                     a.popup__close(href="#") X        
-
 </template>
 
 <script lang="js">
@@ -367,11 +359,6 @@ form {
     padding-bottom: 45px;
     width: 1100px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-html, body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {

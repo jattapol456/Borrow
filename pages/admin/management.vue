@@ -24,17 +24,6 @@ body
                               td(data-th="ACTION")
                                 button(@click="deleteUser(item._id)" type="button" class="button text-center text-sm p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-20 h-9 text-white rounded") Delete
             
-                  //- .popup(id="popup")
-                  //-     .popup-inner
-                  //-         div
-                  //-           .pl-40
-                  //-             p CONFIRM TO DELETE
-
-                  //-           .flex.justify-center.pt-8.pl-20.space-x-2(@click="deleteUser(item._id)")
-                  //-             a(type="button" class="popup__close text-center p-1 pt-2 bg-grayBG focus:bg-grayBG focus:ring-red-200 w-40 h-10 text-black rounded" href="#") Cancel
-                  //-             div
-                  //-               button(type="button" class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-40 h-10 text-white rounded") OK        
-
 </template>
 
 <script lang="js">
@@ -50,23 +39,20 @@ export default {
         items:[],
       }
     },
-    // mounted(){
-    //   this.deleteUser()
-    // },
     async mounted(){
       const res = await this.$axios.get(`http://localhost:3030/users`)
       this.items = res.data
     },
     methods: {
       async deleteUser(_id) {
-        const res = await this.$axios.delete(
-          `http://localhost:3030/users/${_id}`
-        )
-        location.reload()
-        // this.$router.push("/admin/management")
+        if(confirm(`Do you want to delete this user?`)) {
+          const res = await this.$axios.delete(
+            `http://localhost:3030/users/${_id}`
+          )
+          location.reload()
+        }
       }
     }
-
 }
 </script>
 
@@ -80,11 +66,6 @@ form {
   padding-bottom: 45px;
   width: 1100px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-html,
-body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {
@@ -146,7 +127,6 @@ body {
     line-height: 3rem;
     text-align: center;
   }
-
 }
 
 </style>

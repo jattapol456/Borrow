@@ -128,10 +128,12 @@ export default {
             location.reload()
         },
         async deleteItem() {
-            const res = await this.$axios.delete(
-                `http://localhost:3030/items/${this.$route.params.id}`
-            )
-            this.$router.push("/admin/treasury")
+            if(confirm(`Do you want to delete this item?`)) {
+                const res = await this.$axios.delete(
+                    `http://localhost:3030/items/${this.$route.params.id}`
+                )
+                this.$router.push("/admin/treasury")
+            }
         }
     }
 

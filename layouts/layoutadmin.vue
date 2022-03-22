@@ -14,13 +14,11 @@
 <script lang="js">
 import Navbaradmin from '../components/menus/Navbaradmin.vue'
 import Sidebaradmin from '../components/menus/Sidebaradmin.vue'
-// import Pagination from '../components/Pagination.vue'
 
 export default({
   components: {
     Navbaradmin,
     Sidebaradmin,
-    // Pagination,
   },
 })
 </script>
@@ -28,5 +26,8 @@ export default({
 <style lang="postcss">
 .input {
   @apply shadow border-2 border-grayBG rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-sm;
+}
+body {
+  font-family: 'Raleway', sans-serif;
 }
 </style>
