@@ -85,7 +85,7 @@ body
                                 td(data-th="RETURN") {{ item.datereturn }}
                                 td(data-th="TIME") {{ item.timereturn }}
                                 td
-                                    a(@click="select(item)" class="button text-center p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-8 text-white rounded" href="#popupreturn") CONFIRM
+                                    a(@click="select(item)" class="button text-center text-xs p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-6 text-white rounded" href="#popupreturn") CONFIRM
      
                 .popupreturn(id="popupreturn")
                     .popupreturn-inner(v-if="selectitem!=null")
