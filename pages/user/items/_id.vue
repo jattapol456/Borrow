@@ -2,7 +2,7 @@
 body
     .pt-14.pl-20
         .wrapper.pl-6
-            form.p-6
+            .form.p-6
                 .pl-20.pt-6
                     .flex.justify-between.pr-20
                         .flex.space-x-4
@@ -48,27 +48,28 @@ body
                                         td(data-th="PROBLEM") {{user.problem}}
             .popup(id="popup")
                 .popup-inner
-                    .pl-24.pt-10
+                    form(@submit.prevent="postBorrow()").pl-24.pt-10
                         .flex.justify-between.items-center.pr-64
                             p.pl-20 Reason :
                         .flex.justify-center
-                            textarea(v-model="reason" class="shadow border-2 border-grayBG rounded p-2 w-80 h-20 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Reason")
+                            textarea(:required="true" v-model="reason" class="shadow border-2 border-grayBG rounded p-2 w-80 h-20 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Reason")
                         .flex.justify-center.pt-4
                             .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
                                 .space-y-4
                                     p BORROW :
                                     .pl-6
-                                        input.border(type="date" id="" name="" v-model="dateborrow" )
+                                        input.border(type="date" id="" name="" v-model="dateborrow" :required="true")
                                     .pl-6
-                                        input.border(type="time" id="" name="" v-model="timeborrow" )
+                                        input.border(type="time" id="" name="" v-model="timeborrow" :required="true")
                                 .space-y-4
                                     p RETURN :
                                     .pl-6
-                                        input.border(type="date" id="" name="" v-model="datereturn" )
+                                        input.border(type="date" id="" name="" v-model="datereturn" :required="true")
                                     .pl-6
-                                        input.border(type="time" id="" name="" v-model="timereturn" ) 
-                        .flex.justify-center.pt-10(@click="postBorrow()")
-                            Buttonred.w-60.h-10 SEND REQUEST
+                                        input.border(type="time" id="" name="" v-model="timereturn" :required="true") 
+                        .flex.justify-center.pt-10
+                            button(type="submit")
+                                Buttonred.w-60.h-10 SEND REQUEST
                     a.popup__close(href="#") X
 
 </template>
@@ -132,7 +133,7 @@ export default {
   margin-top: 20px;
   margin-bottom: 80px;
 }
-form {
+.form {
   background: #ffffff;
   padding-bottom: 45px;
   width: 1100px;

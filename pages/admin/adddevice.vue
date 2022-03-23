@@ -7,29 +7,32 @@ body
                     div
                         div(v-if="!image").space-y-4
                             h2 Select an image
-                            input(type="file" @change="onFileChange")
+                            input(type="file" @change="onFileChange" :required="true")
                         div(v-else).flex.items-end.space-x-4
                             img(:src="image")
                             button.text-red-main.pb-1(@click="removeImage") Remove image
                     .pr-96.space-y-10
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Item :
-                            input(class="input" type="text" id="item" v-model="name").py-2.px-4
+                            input(class="input" type="text" id="item" v-model="name" :required="true").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Brand :
-                            input(class="input" id="brand" v-model="brand")
+                            input(class="input" id="brand" v-model="brand" :required="true")
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Model :
-                            input(class="input" id="model" v-model="model").py-2.px-4
+                            input(class="input" id="model" v-model="model" :required="true").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Code IP :
-                            input(class="input" id="code_ip" v-model="code_ip").py-2.px-4
+                            input(class="input" id="code_ip" v-model="code_ip" :required="true").py-2.px-4
                         .flex.justify-end.items-center.space-x-4.pr-80
                             p Status :
-                            input(class="input" type="text" id="statusitem" v-model="statusitem").py-2.px-4
+                            select(v-model="statusitem" :required="true").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.shadow.border-2
+                                option AVAILABLE
+                                option UNAVAILABLE
 
                 .flex.justify-center.pt-10
-                    Buttonred.w-60.h-10 ADD DIVICE
+                    button(type="submit")
+                        Buttonred.w-60.h-10 ADD DIVICE
                 
 </template>
 
@@ -106,5 +109,7 @@ img {
   display: block;
   margin-bottom: 10px;
 }
-
+select {
+    width: 217px;
+}
 </style>

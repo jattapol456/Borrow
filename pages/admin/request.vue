@@ -148,10 +148,12 @@ export default {
             this.selectitem = item
         },
         async deleteBorrow(item) {
-            const res = await this.$axios.delete(
-                `http://localhost:3030/borrows/${item._id}`
-            )
-            location.reload()
+            if(confirm(`Do you want to delete this user?`)) {
+                const res = await this.$axios.delete(
+                    `http://localhost:3030/borrows/${item._id}`
+                )
+                location.reload()
+            }
         },
         async updateProblem(item) {
             await this.$axios.patch(

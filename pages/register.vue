@@ -1,7 +1,7 @@
 <template lang="pug">
 body
     .wrapper
-        .form
+        form(@submit.prevent="register()")
             .main.w-full
                 div
                     nuxt-link.text-sm(:to="{ path: '/'}").flex.text-center.space-x-2
@@ -17,40 +17,40 @@ body
                 .px-12.pt-5
                     .pb-4.space-y-2
                         p Firstname
-                        input(class="input" v-model="firstname").py-2.px-4.w-80
+                        input(class="input" v-model="firstname" :required="true").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Lastname
-                        input(class="input" v-model="lastname").py-2.px-4.w-80
+                        input(class="input" v-model="lastname" :required="true").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Email
-                        input(class="input" type="email" autocomplete="email" v-model="email").py-2.px-4.w-80
+                        input(class="input" type="email" autocomplete="email" v-model="email" :required="true").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Password
-                        input(class="input" type="password" autocomplete="new-password" v-model="password").py-2.px-4.w-80
+                        input(class="input" type="password" autocomplete="new-password" v-model="password" :required="true").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Phone Number
-                        input(class="input" v-model="phone_number").py-2.px-4.w-80
+                        input(class="input" v-model="phone_number" :required="true").py-2.px-4.w-80
                     .pb-4.space-y-2
                         p Employee ID
-                        input(class="input"  v-model="employee_id").py-2.px-4.w-80
+                        input(class="input"  v-model="employee_id" :required="true").py-2.px-4.w-80
                                 
                     .pb-4.space-y-2
                         .form-group
                             label(for="country" class="col-sm-2 control-label") Division
                             .col-sm-7          
-                                select(v-model="selectDivision").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
+                                select(:required="true" v-model="selectDivision").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
                                     option(v-for="item in divisions" :value="item.name") {{ item.name }}
                     .pb-4.space-y-2
                         .form-group
                             label(for="state" class="col-sm-2 control-label") Department
                             .col-sm-7  
-                                select(v-model="selectDepartment").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
+                                select(:required="true" v-model="selectDepartment").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
                                         option(v-for="item in departments" :value="item") {{ item }}
                     .pb-4.space-y-2
                         .form-group
                             label(for="state" class="col-sm-2 control-label") Section
                             .col-sm-7  
-                                select(v-model="selectSection").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
+                                select(:required="true" v-model="selectSection").text-gray-700.py-2.px-4.rounded.inline-flex.items-center.w-80.shadow.border-2
                                         option(v-for="item in sections" :value="item") {{ item }}                   
                     .pb-4.space-y-2
                         div(v-if="!image").space-y-4
@@ -59,7 +59,7 @@ body
                         div(v-else).flex.items-end.space-x-4
                             img(:src="image").h-32.w-32
                             button.text-red-main.pb-1(@click="removeImage") Remove image
-                    .pb-4.pt-8(@click="register()")
+                    button.pb-4.pt-8(type="submit")
                         Buttonred.w-80.h-10 Register
 </template>
 
@@ -299,7 +299,7 @@ export default {
                 department:this.selectDepartment,
                 section:this.selectSection,
                 profileimg: url
-                })
+            })
             this.$router.push("/")
         }
     }
@@ -311,7 +311,7 @@ export default {
   margin-top: 80px;
   margin-bottom: 80px;
 }
-.form {
+form {
   position: relative;
   z-index: 1;
   background: #ffffff;

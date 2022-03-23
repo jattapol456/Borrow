@@ -2,7 +2,7 @@
 body
     .pt-14.pl-20
         .wrapper.pl-6
-            form
+            .form
                 .table-container
                     table.table-auto.w-full.border
                         thead.h-12
@@ -22,7 +22,7 @@ body
                                     a(@click="select(item)" class="button text-center text-xs p-1 bg-red-main focus:bg-red-500 focus:ring-red-200 w-32 h-6 text-white rounded" href="#popup") Request
             .popup(id="popup")
                 .popup-inner(v-if="selectitem!=null")
-                    .pl-24
+                    form(@submit.prevent="waitreturn(selectitem)").pl-24
                         .flex.justify-center.pt-4
                             .borrow.flex.justify-center.items-center.p-10.border-red-main.border-2.space-x-28
                                 .space-y-4
@@ -31,9 +31,10 @@ body
                                         p Datereturn
                                         p {{ selectitem.dateborrow }}
                                     .pl-6
-                                        input.border(v-model="datereturn" type="time" id="" name="") 
-                        .flex.justify-center.pt-10(@click="waitreturn(selectitem)")
-                            Buttonred.w-60.h-10 RETURN
+                                        input.border(v-model="datereturn" type="time" id="" name="" :required="true") 
+                        .flex.justify-center.pt-10
+                            button(type="submit")
+                                Buttonred.w-60.h-10 RETURN
                     a.popup__close(href="#") X
 </template>
 
@@ -89,7 +90,7 @@ export default {
 	margin-top: 20px;
     margin-bottom: 80px;
 }
-form {
+.form {
     background: #FFFFFF;
     padding-bottom: 45px;
     width: 1100px;
